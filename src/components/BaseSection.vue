@@ -15,19 +15,34 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import BootstrapVue from 'bootstrap-vue';
-import './styles/site.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+<template lang="pug">
+    section.navSection(
+        :class="{ 'bg-dark': dark, 'text-light': dark }"
+    )
+        .container(:class="containerClasses")
+            slot
+</template>
 
-Vue.config.productionTip = false;
+<script>
+export default {
+  name: 'Section',
+  props: {
+    dark: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+    containerClasses: {
+      required: false
+    }
+  },
+};
+</script>
 
-Vue.use(BootstrapVue);
-
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount('#app');
+<style lang="scss" scoped>
+.navSection {
+    .container {
+      min-height: 100%;
+    }
+}
+</style>

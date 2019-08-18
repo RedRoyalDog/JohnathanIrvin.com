@@ -15,19 +15,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import BootstrapVue from 'bootstrap-vue';
-import './styles/site.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+export { Particle }
 
-Vue.config.productionTip = false;
+class Particle {
+  constructor(x = 0, y = 0, speed = Math.random() * 0.9, directionAngle = Math.floor(Math.random() * 360)) {
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.directionAngle = directionAngle;
+    this.vector = {
+      x: Math.cos(this.directionAngle) * this.speed,
+      y: Math.sin(this.directionAngle) * this.speed,
+    };
+  }
 
-Vue.use(BootstrapVue);
-
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount('#app');
+  update() {
+    this.x += this.vector.x;
+    this.y += this.vector.y;
+  }
+}

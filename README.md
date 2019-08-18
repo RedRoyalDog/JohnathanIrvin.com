@@ -1,4 +1,4 @@
-# site
+# JohnathanIrvin.com
 
 ## Project setup
 ```
