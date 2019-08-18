@@ -16,11 +16,10 @@
  */
 
 <template lang="pug">
-    section.navSection(
-        :class="{ 'bg-dark': dark, 'text-light': dark }"
-    )
-        .container(:class="containerClasses")
-            slot
+section(
+    :class="{ 'bg-dark': dark, 'text-light': dark }"
+)
+  slot
 </template>
 
 <script>
@@ -41,8 +40,8 @@ export default {
 
 <style lang="scss" scoped>
 .navSection {
-    .container {
-      min-height: 100%;
-    }
+  .container {
+    min-height: 100%;
+  }
 }
 </style>

@@ -16,9 +16,9 @@
  */
 
 <template lang="pug">
-  BaseSection#skills(container-classes="align-center")
+  BaseSection#skills.container
     h2.text-center.p-2.h1.text-center.d-none Skills
-    .flex.text-center.icons
+    .flex.text-center.icons.align-center
       i.devicon-css3-plain-wordmark.colored.icon
       i.devicon-html5-plain-wordmark.colored.icon
       i.devicon-javascript-plain.colored.icon
@@ -35,7 +35,7 @@
 
 <script>
 import 'devicon';
-import BaseSection from './BaseSection';
+import BaseSection from '@/components/BaseSection';
 
 export default {
   name: 'TheSectionSkills',
@@ -47,13 +47,21 @@ export default {
 
 <style lang="scss">
 #skills {
+  position: relative;
+
   .align-center {
     display: flex;
-    align-items: center;
+    align-content: space-evenly;
+    justify-content: space-around;
   }
 
   .icons {
     font-size: 0.9rem;
+    z-index: 100;
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
   }
 }
 </style>

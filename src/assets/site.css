@@ -15,22 +15,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-export { Particle }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-class Particle {
-  constructor(x = 0, y = 0, speed = Math.random() * 0.9, directionAngle = Math.floor(Math.random() * 360)) {
-    this.x = x;
-    this.y = y;
-    this.speed = speed;
-    this.directionAngle = directionAngle;
-    this.vector = {
-      x: Math.cos(this.directionAngle) * this.speed,
-      y: Math.sin(this.directionAngle) * this.speed,
-    };
-  }
+#app {
+  overflow-x: hidden;
+}
 
-  update() {
-    this.x += this.vector.x;
-    this.y += this.vector.y;
-  }
+.bg-accent {
+  background-color: #DDF8F6 !important;
+}
+
+.fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
 }

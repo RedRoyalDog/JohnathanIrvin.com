@@ -1,11 +1,11 @@
 /*
- * Created on Tue Mar 31 2020 by Johnathan Irvin
+ * Created on Mon Jul 13 2020 by Johnathan Irvin
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -16,21 +16,39 @@
  */
 
 <template lang="pug">
-  div
-    .row(style="min-height: 100vh;")
-      TheSectionAbout.col-md-6
-      TheSectionSkills.col-md-6
+.container
+  h1.display-3.pb-3.mb-3.text-right
+    u {{ title }}
+  .row.border-bottom(
+      v-for="post in posts"
+      :key="post.id"
+  ).post: .col
+    div: h2 {{ post.title }}
+    div.mb-1.text-muted {{ post.date }}
+    div.mb-4: p.lead {{ post.description }}
+    div.mb-4
+      router-link.font-weight-bold.text-uppercase.text-primary(
+        :to="post.path"
+      ) Read more
 </template>
 
 <script>
-import TheSectionAbout from '../components/TheSectionAbout';
-import TheSectionSkills from '../components/TheSectionSkills';
-
 export default {
-  name: 'Home',
-  components: {
-    TheSectionAbout,
-    TheSectionSkills,
-  },
-};
+  name: "BlogFeed",
+  props: [
+      'title'
+  ],
+  computed: {
+    posts: function() {
+      return this.$page.allPost.edges.map(item => item.node)
+    }
+  }
+}
 </script>
+
+<style lang="scss">
+.post { 
+  z-index: 4;
+  position: relative;
+}
+</style>
