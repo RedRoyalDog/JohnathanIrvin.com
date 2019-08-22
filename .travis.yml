@@ -4,7 +4,10 @@ node_js:
 
 cache: npm
 
-script: npm run build && echo 'JohnathanIrvin.com' > CNAME
+jobs:
+  include:
+    script: echo 'JohnathanIrvin.com' > CNAME
+    script: npm run build
 
 deploy:
  provider: pages

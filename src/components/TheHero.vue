@@ -21,7 +21,7 @@ export default {
 <style lang="css" scoped>
 .fullheight.jumbotron {
   position: relative;
-  /* background: url('../img/pexels-photo.jpeg') no-repeat center center; */
+  background: url(../assets/img1.jpg) no-repeat center center;
   background-size: cover;
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: calc(100vh - 56px);
