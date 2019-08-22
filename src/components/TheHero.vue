@@ -21,8 +21,7 @@ export default {
 <style lang="css" scoped>
 .fullheight.jumbotron {
   position: relative;
-  background: url(../assets/img1.jpg) no-repeat center center;
-  background-size: cover;
+
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: calc(100vh - 56px);
   margin-bottom: 0;
@@ -30,5 +29,24 @@ export default {
   align-items: center;
   text-align: center;
   overflow:hidden
+}
+
+.fullheight.jumbotron::after {
+  content: "";
+  background: url(../assets/img1.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.45;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.fullheight.jumbotron > .container {
+  z-index: 2;
 }
 </style>
