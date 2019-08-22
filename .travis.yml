@@ -4,10 +4,7 @@ node_js:
 
 cache: npm
 
-jobs:
-  include:
-    script: echo 'JohnathanIrvin.com' > CNAME
-    script: npm run build
+  script: ./deploy.sh
 
 deploy:
  provider: pages
