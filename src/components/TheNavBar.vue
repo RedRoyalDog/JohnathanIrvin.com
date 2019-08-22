@@ -1,5 +1,5 @@
 <template lang="pug">
-  div: b-navbar(toggleable="sm"
+  b-navbar(toggleable="sm"
       type="dark"
       variant="dark"
       align="center"
