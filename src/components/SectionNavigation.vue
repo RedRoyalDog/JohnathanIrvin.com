@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    name: "NavigationSection"
+    name: "SectionNavigation"
 };
 </script>
 

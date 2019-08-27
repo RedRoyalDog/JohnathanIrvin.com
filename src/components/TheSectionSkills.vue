@@ -1,14 +1,14 @@
 <template lang="pug">
-    NavigationSection
-        p test
+    SectionNavigation
+        p Skills
 </template>
 
 <script>
-import  NavigationSection from "./NavigationSection";
+import  SectionNavigation from "./SectionNavigation";
 export default {
     name: "TheSkillList",
     components: {
-        NavigationSection
+        SectionNavigation
     }
 };
 </script>
