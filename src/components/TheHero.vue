@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import TheNavBar from "../components/TheNavBar";
+import TheNavBar from '../components/TheNavBar';
 
 export default {
-  name: "TheHero",
+  name: 'TheHero',
   components: {
-    TheNavBar
-  }
+    TheNavBar,
+  },
 };
 </script>
 
