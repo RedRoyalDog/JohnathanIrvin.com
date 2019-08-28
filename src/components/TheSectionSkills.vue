@@ -1,10 +1,11 @@
 <template lang="pug">
-    Section#skills
-        p Skills
+    Section#skills.flex
+            h2.text-center.pt-2.h1 Skills
 </template>
 
 <script>
-import  Section from "./Section";
+import Section from "./Section";
+
 export default {
     name: "TheSectionSkills",
     components: {
@@ -12,3 +13,11 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

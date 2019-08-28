@@ -1,6 +1,6 @@
 <template lang="pug">
     Section#contact.flex: b-container
-        h2.text-center Contact
+        h2.text-center.h1 Contact
         FormContact
 </template>
 
