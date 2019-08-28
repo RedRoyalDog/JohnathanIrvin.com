@@ -1,5 +1,6 @@
 <template lang="pug">
     SectionNavigation
+        p Contact
 </template>
 
 <script>

@@ -2,20 +2,27 @@
   div
     TheHero
     TheNavBar
-    TheSkillList
+    TheSectionSkills
+    TheSectionAbout
+    TheSectionContact
 </template>
 
 <script>
 import TheHero from "../components/TheHero";
-import TheSkillList from "../components/TheSkillList";
 import  TheNavBar from "../components/TheNavBar";
+import TheSectionAbout from "../components/TheSectionAbout";
+import TheSectionContact from "../components/TheSectionContact";
+import TheSectionSkills from "../components/TheSectionSkills";
 
 export default {
   name: "Home",
   components: {
     TheHero,
-    TheSkillList,
-    TheNavBar
+    TheNavBar,
+
+    TheSectionAbout,
+    TheSectionContact,
+    TheSectionSkills
   }
 };
 </script>
