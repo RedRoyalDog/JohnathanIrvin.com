@@ -1,18 +1,14 @@
 <template lang="pug">
-    SectionNavigation#about
+    Section#about(dark)
         p About
 </template>
 
 <script>
-import  SectionNavigation from "./SectionNavigation";
+import  Section from "./Section";
 export default {
     name: "TheSectionAbout",
     components: {
-        SectionNavigation
+        Section
     }
 };
 </script>
-
-<style>
-
-</style>

@@ -1,11 +1,20 @@
 <template lang="pug">
-    section.navSection
+    section.navSection(
+        :class="{ 'bg-dark': dark, 'text-light': dark }"
+    )
         slot
 </template>
 
 <script>
 export default {
-    name: "SectionNavigation"
+    name: "Section",
+    props: {
+        dark: {
+            type: Boolean,
+            default: false,
+            required: false
+        }
+    }
 };
 </script>
 

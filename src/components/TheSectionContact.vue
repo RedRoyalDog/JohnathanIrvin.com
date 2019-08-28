@@ -1,18 +1,14 @@
 <template lang="pug">
-    SectionNavigation#contact
+    Section#contact
         p Contact
 </template>
 
 <script>
-import  SectionNavigation from "./SectionNavigation";
+import  Section from "./Section";
 export default {
     name: "TheSectionContact",
     components: {
-        SectionNavigation
+        Section
     }
 };
 </script>
-
-<style>
-
-</style>

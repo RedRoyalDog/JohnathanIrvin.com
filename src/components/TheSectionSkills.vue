@@ -1,14 +1,14 @@
 <template lang="pug">
-    SectionNavigation#skills
+    Section#skills
         p Skills
 </template>
 
 <script>
-import  SectionNavigation from "./SectionNavigation";
+import  Section from "./Section";
 export default {
     name: "TheSectionSkills",
     components: {
-        SectionNavigation
+        Section
     }
 };
 </script>
