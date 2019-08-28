@@ -3,7 +3,8 @@
       type="dark"
       variant="dark"
       align="center"
-      fixed="bottom")
+      fixed="bottom"
+      v-b-scrollspy)
     b-navbar-brand
     b-navbar-toggle(target="nav-collapse")
     b-collapse#nav-collapse(is-nav)
