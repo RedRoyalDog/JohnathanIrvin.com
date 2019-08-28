@@ -3,16 +3,15 @@
       type="dark"
       variant="dark"
       align="center"
-      fixed="bottom"
-      v-b-scrollspy:nav-scroller)
+      fixed="bottom")
     b-navbar-brand
     b-navbar-toggle(target="nav-collapse")
     b-collapse#nav-collapse(is-nav)
       b-navbar-nav.w-100(fill)
-          b-nav-item(href="#home" @click="scrollIntoView") Home
-          b-nav-item(href="#skills" @click="scrollIntoView") Skills
-          b-nav-item(href="#about" @click="scrollIntoView") About
-          b-nav-item(href="#contact" @click="scrollIntoView") Contact
+          b-nav-item(href="#home") Home
+          b-nav-item(href="#skills") Skills
+          b-nav-item(href="#about") About
+          b-nav-item(href="#contact") Contact
 </template>
 
 <script>
