@@ -1,5 +1,5 @@
 <template lang="pug">
-  b-jumbotron.fullheight(
+  b-jumbotron.fullheight#home(
       header="Johnathan Irvin"
       lead="Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor"
       bg-variant="dark"

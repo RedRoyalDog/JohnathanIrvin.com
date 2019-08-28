@@ -1,5 +1,5 @@
 <template lang="pug">
-    SectionNavigation
+    SectionNavigation#skills
         p Skills
 </template>
 

@@ -12,6 +12,7 @@ export default {
 <style scoped>
 .navSection {
     min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: calc(100vh - 56px);
+    min-height: 100vh;
+    padding-bottom: 56px;
 }
 </style>

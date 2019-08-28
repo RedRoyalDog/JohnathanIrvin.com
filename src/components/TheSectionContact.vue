@@ -1,5 +1,5 @@
 <template lang="pug">
-    SectionNavigation
+    SectionNavigation#contact
         p Contact
 </template>
 

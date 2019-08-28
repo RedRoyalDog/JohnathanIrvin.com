@@ -1,7 +1,7 @@
 <template lang="pug">
   div
-    TheHero
     TheNavBar
+    TheHero
     TheSectionSkills
     TheSectionAbout
     TheSectionContact
