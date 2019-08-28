@@ -20,3 +20,9 @@ export default {
   name: "TheNavBar"
 };
 </script>
+
+<style scoped>
+  .bg-dark {
+    background-color: #141a20 !important
+  }
+</style>
