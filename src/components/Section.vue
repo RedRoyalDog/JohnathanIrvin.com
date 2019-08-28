@@ -2,7 +2,8 @@
     section.navSection(
         :class="{ 'bg-dark': dark, 'text-light': dark }"
     )
-        slot
+        b-container(fluid)
+            slot
 </template>
 
 <script>
