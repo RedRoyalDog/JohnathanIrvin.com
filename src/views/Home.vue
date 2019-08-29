@@ -8,21 +8,21 @@
 </template>
 
 <script>
-import TheHero from "../components/TheHero";
-import  TheNavBar from "../components/TheNavBar";
-import TheSectionAbout from "../components/TheSectionAbout";
-import TheSectionContact from "../components/TheSectionContact";
-import TheSectionSkills from "../components/TheSectionSkills";
+import TheHero from '../components/TheHero';
+import TheNavBar from '../components/TheNavBar';
+import TheSectionAbout from '../components/TheSectionAbout';
+import TheSectionContact from '../components/TheSectionContact';
+import TheSectionSkills from '../components/TheSectionSkills';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     TheHero,
     TheNavBar,
 
     TheSectionAbout,
     TheSectionContact,
-    TheSectionSkills
-  }
+    TheSectionSkills,
+  },
 };
 </script>

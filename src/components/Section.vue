@@ -8,14 +8,14 @@
 
 <script>
 export default {
-    name: "Section",
-    props: {
-        dark: {
-            type: Boolean,
-            default: false,
-            required: false
-        }
-    }
+  name: 'Section',
+  props: {
+    dark: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+  },
 };
 </script>
 

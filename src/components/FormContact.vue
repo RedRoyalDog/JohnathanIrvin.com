@@ -49,23 +49,23 @@
 
 <script>
 export default {
-    name: "FormContact",
-    data() {
-        return {
-            form: {
-                email: '',
-                name: '',
-                content: ''
-            }
-        }
+  name: 'FormContact',
+  data() {
+    return {
+      form: {
+        email: '',
+        name: '',
+        content: '',
+      },
+    };
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      alert('Not currently implemented.');
     },
-    methods: {
-        onSubmit(evt) {
-            evt.preventDefault();
-            alert("Not currently implemented.");
-        }
-    }
-}
+  },
+};
 </script>
 
 <style scoped>

@@ -1,16 +1,17 @@
 <template lang="pug">
     Section#skills.flex
             h2.text-center.pt-2.h1 Skills
+            i.devicon-babel-plain
 </template>
 
 <script>
-import Section from "./Section";
+import Section from './Section';
 
 export default {
-    name: "TheSectionSkills",
-    components: {
-        Section
-    }
+  name: 'TheSectionSkills',
+  components: {
+    Section,
+  },
 };
 </script>
 

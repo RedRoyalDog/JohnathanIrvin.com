@@ -4,12 +4,12 @@
 </template>
 
 <script>
-import  Section from "./Section";
+import Section from './Section';
 export default {
-    name: "TheSectionAbout",
-    components: {
-        Section,
-    },
+  name: 'TheSectionAbout',
+  components: {
+    Section,
+  },
 };
 </script>
 

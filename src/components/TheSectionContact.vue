@@ -5,15 +5,15 @@
 </template>
 
 <script>
-import FormContact from "./FormContact";
-import Section from "./Section";
+import FormContact from './FormContact';
+import Section from './Section';
 
 export default {
-    name: "TheSectionContact",
-    components: {
-        FormContact,
-        Section
-    }
+  name: 'TheSectionContact',
+  components: {
+    FormContact,
+    Section,
+  },
 };
 </script>
 
