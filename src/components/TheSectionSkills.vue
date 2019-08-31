@@ -75,6 +75,6 @@ export default {
 
     .icon {
         margin: 10px;
-        width: 20%;
+        min-width: 20%;
     }
 </style>
