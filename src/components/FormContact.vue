@@ -1,11 +1,14 @@
 <template lang="pug">
     b-form#contact-form(
-        @submit="onSubmit",
+
+        action="https://formspree.io/IrvinJohnathan@gmail.com",
+        method="post"
     )
         b-form-group(
             id="contact-group-1",
             label="Email Address:",
             label-for="contact-input-1",
+            name="simple-contact-form",
             description="By submitting your email, you agree to join our mailing list."
         )
             b-form-input(
@@ -13,6 +16,7 @@
                 v-model="form.email",
                 type="email",
                 placeholder="example@example.com",
+                name="_replyto",
                 required
             )
         b-form-group(
@@ -25,6 +29,7 @@
                 id="contact-input-2",
                 v-model="form.name",
                 placeholder="Alan Turing",
+                name="full-name".
                 required
             )
         b-form-group(
@@ -38,6 +43,7 @@
                 v-model="form.content",
                 placeholder="Johnathan, I'd like to get in touch with you about...",
                 rows="6",
+                name="message",
                 max-rows="10"
             )
         b-button(
