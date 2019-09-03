@@ -7,7 +7,7 @@
           | complex enterprise software systems.
         p Using his knowledge as a Senior Software Engineer, Johnathan 
           | provided technical expertise to the gaming journalist community.
-        p After years of helping others; Johnathan planned, designed,
+        p After years of helping others; Johnathan planned, designed, 
           | and built a community of his own -- 
           a(href="https://IGamePress.com") IGamePress
         p When Johnathan is not working in Cyber Security or 
