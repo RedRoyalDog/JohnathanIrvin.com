@@ -1,5 +1,5 @@
 <template lang="pug">
-    Section#skills
+    Section#skills.bg-tan
             h2.text-center.p-2.h1.text-center Skills
             .flex.text-center
                 i.devicon-css3-plain-wordmark.colored.icon
@@ -76,5 +76,9 @@ export default {
     .icon {
         margin: 10px;
         min-width: 20%;
+    }
+
+    .bg-tan {
+        background-color: #f8f9fa;
     }
 </style>

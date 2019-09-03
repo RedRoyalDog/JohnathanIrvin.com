@@ -2,8 +2,8 @@
   div
     TheNavBar
     TheHero
-    TheSectionSkills
     TheSectionAbout
+    TheSectionSkills
     TheSectionContact
 </template>
 

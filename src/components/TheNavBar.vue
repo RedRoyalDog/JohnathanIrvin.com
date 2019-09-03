@@ -10,8 +10,8 @@
     b-collapse#nav-collapse(is-nav)
       b-navbar-nav.w-100(fill)
           b-nav-item(href="#home") Home
-          b-nav-item(href="#skills") Skills
           b-nav-item(href="#about") About
+          b-nav-item(href="#skills") Skills
           b-nav-item(href="#contact") Contact
 </template>
 
