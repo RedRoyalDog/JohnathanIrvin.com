@@ -9,21 +9,32 @@ export default {
   data() {
     return {
       provider: {
-        context: null
-      }
-    }
+        context: null,
+        width: null,
+        height: null
+      },
+    };
   },
-  provide () {
+  provide() {
     return {
       provider: this.provider
-    }
+    };
   },
+  methods: {
+      resize() {
+        this.provider.width = this.$refs['base-canvas'].parentElement.clientWidth;
+        this.provider.height = this.$refs['base-canvas'].parentElement.clientHeight;
 
-  mounted () {
-    this.provider.context = this.$refs['base-canvas'].getContext('2d')
+        this.$refs['base-canvas'].width = this.provider.width;
+        this.$refs['base-canvas'].height = this.provider.height;
+      }
+  },
+  mounted() {
+    this.provider.context = this.$refs['base-canvas'].getContext('2d');
 
-    this.$refs['base-canvas'].width = this.$refs['base-canvas'].parentElement.clientWidth
-    this.$refs['base-canvas'].height = this.$refs['base-canvas'].parentElement.clientHeight
-  }
-}
+    this.resize();
+
+    window.addEventListener('resize', this.resize.bind(this));
+  },
+};
 </script>

@@ -5,15 +5,21 @@
       bg-variant="dark"
       text-variant="light"
       fluid)
+        BaseCanvas
+          CanvasParticle
 </template>
 
 <script>
 import TheNavBar from '../components/TheNavBar';
+import BaseCanvas from '../components/BaseCanvas';
+import CanvasParticle from '../components/CanvasParticle';
 
 export default {
   name: 'TheHero',
   components: {
     TheNavBar,
+    BaseCanvas,
+    CanvasParticle,
   },
 };
 </script>

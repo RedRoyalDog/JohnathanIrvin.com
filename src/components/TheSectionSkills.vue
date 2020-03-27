@@ -16,14 +16,14 @@
                 i.devicon-python-plain-wordmark.colored.icon
                 i.devicon-pycharm-plain-wordmark.colored.icon
                 i.devicon-django-plain.colored.icon
-                i.devicon-wordpress-plain-wordmark.colored.icon  
+                i.devicon-wordpress-plain-wordmark.colored.icon
                 i.devicon-csharp-plain-wordmark.colored.icon
                 i.devicon-dot-net-plain-wordmark.colored.icon
                 i.devicon-visualstudio-plain-wordmark.colored.icon
                 i.devicon-gulp-plain.colored.icon
                 i.devicon-mysql-plain-wordmark.colored.icon
                 i.devicon-postgresql-plain-wordmark.colored.icon
-                i.devicon-confluence-plain-wordmark.colored.icon  
+                i.devicon-confluence-plain-wordmark.colored.icon
                 i.devicon-linux-plain.colored.icon
                 i.devicon-debian-plain-wordmark.colored.icon
                 i.devicon-ubuntu-plain-wordmark.colored.icon
@@ -31,7 +31,7 @@
                 i.devicon-devicon-plain-wordmark.icon
                 i.devicon-travis-plain-wordmark.colored.icon
                 i.devicon-docker-plain-wordmark.colored.icon
-                i.devicon-trello-plain-wordmark.colored.icon    
+                i.devicon-trello-plain-wordmark.colored.icon
                 i.devicon-git-plain-wordmark.colored.icon
                 i.devicon-github-plain-wordmark.colored.icon
                 i.devicon-gitlab-plain-wordmark.colored.icon
