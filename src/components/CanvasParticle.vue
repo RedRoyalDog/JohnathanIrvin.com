@@ -20,7 +20,9 @@ export default {
         particleCount: 50,
         width: 0,
         height: 0,
-        ctx: null
+        ctx: null,
+        _particles: null,
+        drawing: false
     };
   },
 
@@ -74,7 +76,7 @@ export default {
         }
 
         if (y > this.height || y < 0) {
-            particle.vector.y *= -1;
+            particle.vector.y *= -1.1;
             particle.y = Math.max(0, Math.min(this.height, y));
         }
     },
@@ -96,8 +98,11 @@ export default {
     this.width = this.provider.width;
     this.height = this.provider.height;
 
-    this._initialize();
-    this._renderLoop();
+    if (!this.drawing) {
+        this._initialize();
+        this._renderLoop();
+        this.drawing = true;
+    }
   },
 };
 </script>

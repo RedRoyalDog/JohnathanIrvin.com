@@ -5,7 +5,7 @@
       bg-variant="dark"
       text-variant="light"
       fluid)
-        BaseCanvas
+        BaseCanvas.fill
           CanvasParticle
 </template>
 
@@ -25,6 +25,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .fullheight.jumbotron {
   position: relative;
 
