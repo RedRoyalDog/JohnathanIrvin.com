@@ -16,8 +16,8 @@ export default {
 
   data() {
     return {
-        particleDistance: 60,
-        particleCount: 50,
+        particleDistance: 120,
+        particleCount: 75,
         width: 0,
         height: 0,
         ctx: null,

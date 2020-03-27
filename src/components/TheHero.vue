@@ -2,7 +2,7 @@
   b-jumbotron.fullheight#home(
       header="Johnathan Irvin"
       lead="Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor"
-      bg-variant="dark"
+      bg-variant="transparent"
       text-variant="light"
       fluid)
         BaseCanvas.fill
@@ -43,7 +43,9 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  overflow:hidden
+  overflow: hidden;
+
+  background-color: black !important;
 }
 
 .fullheight.jumbotron::after {
@@ -51,7 +53,7 @@ export default {
   background: url(../assets/img1.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.2;
+  opacity: 0.39;
 
   top: 0;
   left: 0;
