@@ -76,7 +76,7 @@ export default {
         }
 
         if (y > this.height || y < 0) {
-            particle.vector.y *= -1.1;
+            particle.vector.y *= -1;
             particle.y = Math.max(0, Math.min(this.height, y));
         }
     },
@@ -99,8 +99,8 @@ export default {
     this.height = this.provider.height;
 
     if (!this.drawing) {
-        this._initialize();
-        this._renderLoop();
+    this._initialize();
+    this._renderLoop();
         this.drawing = true;
     }
   },

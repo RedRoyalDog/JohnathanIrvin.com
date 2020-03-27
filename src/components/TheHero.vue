@@ -26,9 +26,12 @@ export default {
 
 <style lang="css" scoped>
 .fill {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
+
+  top: 0;
+  left: 0;
 }
 
 .fullheight.jumbotron {
@@ -48,7 +51,7 @@ export default {
   background: url(../assets/img1.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.45;
+  opacity: 0.2;
 
   top: 0;
   left: 0;
