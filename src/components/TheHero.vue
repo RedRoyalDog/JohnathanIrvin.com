@@ -3,8 +3,8 @@
       bg-variant="transparent"
       text-variant="light"
       fluid)
-        TextType.relative.hero(slot='header', text='Johnathan Irvin')
-        p.relative(slot='lead', style='z-index: 100') Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor
+        TextType.relative.hero.appleII(slot='header', text='Johnathan Irvin')
+        p.appleII.relative(slot='lead', style='z-index: 100') Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor
         BaseCanvas.fill(style='z-index: 99')
           CanvasParticle
 </template>
@@ -27,15 +27,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.hero { 
-  z-index: 100;
-  font-family: monospace;
+.appleII {
   /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
   color: #33FF33;
 
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
+}
+
+.hero { 
+  z-index: 100;
+  font-family: monospace;
 }
 
 @-webkit-keyframes glow {
