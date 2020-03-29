@@ -1,11 +1,11 @@
 <template lang="pug">
   b-jumbotron.fullheight#home(
-      header="Johnathan Irvin"
-      lead="Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor"
       bg-variant="transparent"
       text-variant="light"
       fluid)
-        BaseCanvas.fill
+        TextType.relative.hero(slot='header', text='Johnathan Irvin')
+        p.relative(slot='lead', style='z-index: 100') Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor
+        BaseCanvas.fill(style='z-index: 99')
           CanvasParticle
 </template>
 
@@ -13,6 +13,7 @@
 import TheNavBar from '../components/TheNavBar';
 import BaseCanvas from '../components/BaseCanvas';
 import CanvasParticle from '../components/CanvasParticle';
+import TextType from '../components/TextType'
 
 export default {
   name: 'TheHero',
@@ -20,11 +21,36 @@ export default {
     TheNavBar,
     BaseCanvas,
     CanvasParticle,
+    TextType
   },
 };
 </script>
 
 <style lang="css" scoped>
+.hero { 
+  z-index: 100;
+  font-family: monospace;
+  /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
+  color: #33FF33;
+
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33;
+  }
+  to {
+    text-shadow: 0 0 2px #000, 0 0 2px #33FF33, 0 0 2px #33FF33, 0 0 2px #33FF33, 0 0 2px #33FF33, 0 0 2px #33FF33, 0 0 2px #33FF33;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
 .fill {
   position: absolute;
   width: 100%;
