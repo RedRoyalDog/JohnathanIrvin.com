@@ -12,7 +12,7 @@ export default {
   name: 'TheSectionContact',
   components: {
     Section,
-    FormContact
+    FormContact,
   },
 };
 </script>
