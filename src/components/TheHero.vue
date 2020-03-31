@@ -3,8 +3,15 @@
       bg-variant="transparent"
       text-variant="light"
       fluid)
-        TextType.relative.hero.appleII(slot='header', text='Johnathan Irvin')
-        p.appleII.relative(slot='lead', style='z-index: 100') Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor
+        TextType.relative.hero.appleII(
+          slot='header',
+          :type-characters='titleTyping',
+          text='Johnathan Irvin',
+          @typed='swapTyping')
+        TextType.appleII.relative.lead(
+          slot='lead',
+          :type-characters='leadTyping',
+          text='Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor')
         BaseCanvas.fill(style='z-index: 99')
           CanvasParticle
 </template>
@@ -23,6 +30,18 @@ export default {
     CanvasParticle,
     TextType
   },
+  data: function() {
+    return {
+      titleTyping: true,
+      leadTyping: false
+    }
+  },
+  methods: {
+    swapTyping() {
+      this.titleTyping = false;
+      this.leadTyping = true;
+    }
+  }
 };
 </script>
 
@@ -34,6 +53,11 @@ export default {
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
+}
+
+.lead { 
+  z-index: 100;
+  font-family: monospace;
 }
 
 .hero { 

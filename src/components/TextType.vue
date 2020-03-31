@@ -27,11 +27,16 @@ export default {
             type: Number,
             default: 1000 // Cursor Blink speed in milliseconds.
         }, 
+        typeCharacters: {
+            type: Boolean,
+            default: true
+        }
     },
     data: function() {
         return {
             isVisible: false,
             written: '',
+            finished: false
         }
     },
     methods: {
@@ -39,21 +44,28 @@ export default {
              return Math.random() * low + high;
         },
         incrementWord: function() {
-            if (this.text === this.written) {
+            console.log(this.typeCharacters);
+            if (this.finished || !this.typeCharacters) {
+                if(!this.typeCharacters && !this.finished) {
+                    setTimeout(this.incrementWord, this.typingSpeed + this.ran(10, 20)); 
+                }
                 return;
             } else {
                 setTimeout(this.incrementWord, this.typingSpeed + this.ran(10, 20)); 
             }
             let lenWritten = this.written.length;
             this.written += this.text[lenWritten];
+            if (this.text == this.written) {
+                this.$emit('typed');
+                this.finished = true;
+            }
         },
         blink: function() {
-            this.isVisible = !this.isVisible && !this.hideCursor;
+            this.isVisible = !this.isVisible && !this.hideCursor && this.typeCharacters;
             setTimeout(this.blink, this.blinkSpeed); 
         }
     },
     created: function() {
-        this.written += this.text[0];
         setTimeout(this.incrementWord, this.typingSpeed + this.ran(10, 20)); 
         setTimeout(this.blink, this.blinkSpeed); 
     }
