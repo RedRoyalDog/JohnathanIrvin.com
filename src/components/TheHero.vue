@@ -31,7 +31,7 @@
       text='Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor')
     BaseCanvas.fill(style='z-index: 99')
       CanvasParticle
-    p.bottom-center: i.down
+    p.bottom-center: i.down.appleII
 </template>
 
 <script>
