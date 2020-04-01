@@ -61,7 +61,6 @@ export default {
              return Math.random() * low + high;
         },
         incrementWord: function() {
-            console.log(this.typeCharacters);
             if (this.finished || !this.typeCharacters) {
                 if(!this.typeCharacters && !this.finished) {
                     setTimeout(this.incrementWord, this.typingSpeed + this.ran(10, 20)); 
