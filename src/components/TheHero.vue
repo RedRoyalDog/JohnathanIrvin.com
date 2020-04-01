@@ -3,21 +3,21 @@
       bg-variant="transparent"
       text-variant="light"
       fluid)
-        TextType.relative.hero.appleII(
-          slot='header',
-          :type-characters='titleTyping',
-          text='Johnathan Irvin',
-          @typed='swapTyping')
-        TextType.appleII.relative.lead(
-          slot='lead',
-          :type-characters='leadTyping',
-          text='Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor')
-        BaseCanvas.fill(style='z-index: 99')
-          CanvasParticle
+    TextType.relative.hero.appleII(
+      slot='header',
+      :type-characters='titleTyping',
+      text='Johnathan Irvin',
+      @typed='swapTyping')
+    TextType.appleII.relative.lead(
+      slot='lead',
+      :type-characters='leadTyping',
+      text='Senior Software Engineer, Journalist, Entrepreneur, Creator, Inventor')
+    BaseCanvas.fill(style='z-index: 99')
+      CanvasParticle
+    p.bottom-center: i.down
 </template>
 
 <script>
-import TheNavBar from '../components/TheNavBar';
 import BaseCanvas from '../components/BaseCanvas';
 import CanvasParticle from '../components/CanvasParticle';
 import TextType from '../components/TextType'
@@ -25,7 +25,6 @@ import TextType from '../components/TextType'
 export default {
   name: 'TheHero',
   components: {
-    TheNavBar,
     BaseCanvas,
     CanvasParticle,
     TextType
@@ -91,7 +90,7 @@ export default {
   position: relative;
 
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: calc(100vh - 56px);
+  min-height: 100vh;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -118,5 +117,34 @@ export default {
 
 .fullheight.jumbotron > .container {
   z-index: 2;
+}
+
+.bottom-center {
+  position: absolute !important;
+  bottom: 0;
+  right: 50%;
+}
+
+.down {
+  width: 10px;
+  height: 10px;
+  color: white;
+  border: solid;
+  border-top: none;
+  border-left: none;
+  display: inline-block;
+  position: relative;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%   {top: -5px}
+  50%  {top: 5px}
+  100% {top: -5px}
 }
 </style>
