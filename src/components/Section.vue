@@ -19,7 +19,7 @@
     section.navSection(
         :class="{ 'bg-dark': dark, 'text-light': dark }"
     )
-        b-container(fluid)
+        .container
             slot
 </template>
 
