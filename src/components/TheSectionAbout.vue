@@ -16,9 +16,12 @@
  */
 
 <template lang="pug">
-    Section#about
-      b-container.content
-        h2.h1.text-center.p-2 About
+    Section#about.align-center
+      BaseCanvas.fill(style='z-index: 3')
+        CanvasParticle
+      .container.content
+        // Todo: Add fun johnny for mobile. Who is this johnathan guy anyway?
+        h1.h1.p-2: VueTyper(text='Johnathan Irvin', :repeat='0', :typeDelay='123', caret-animation='blink')
         p Johnathan Irvin is a Senior Software Engineer with over 
           | 15 years of experience dreaming, designing, and building 
           | complex enterprise software systems. 
@@ -32,27 +35,139 @@
           | in various industries. Such as, but not limited to 
           | manufacturing, finance, trade, and more. 
           a(href="#contact") Contact Now To Discuss Your Project. 
+      p.bottom-center: i.down
 </template>
 
 <script>
+import BaseCanvas from '../components/BaseCanvas';
+import CanvasParticle from '../components/CanvasParticle';
 import Section from './Section';
+import { VueTyper } from 'vue-typer'
+
 export default {
   name: 'TheSectionAbout',
   components: {
+    BaseCanvas,
+    CanvasParticle,
     Section,
+    VueTyper
   },
+  data: function() {
+    return {
+      jobs: ['Senior Software Engineer', 'Journalist', 'Entrepreneur', 'Creator', 'Inventor']
+    }
+  }
 };
 </script>
 
-<style scoped>
-    #about, #about .container, #about p, #about h2 {
-        position: relative;
-        z-index: 2;
-    }
+<style lang="scss" scoped>
+#about {
+  background-color: black;
+  position: relative;
+  z-index: 2;
 
-    #about p {
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 1.5;
-    }
+  .container, p, h1 {
+    position: relative;
+    z-index: 5;
+  }
+
+  p, h1 {
+    color: #33FF33;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+#about::after {
+  content: "";
+  background: url(../assets/img1.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.39;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+}
+</style>
+
+<style lang="scss">
+.vue-typer {
+  font-family: monospace;
+
+  .custom.char {
+    /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
+    color: #33FF33;
+
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  .custom.caret {
+    background-color: #33FF33;
+  }
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 .5px #000, 0 0 .5px #000, 0 0 .5px #33FF33, 0 0 .5px #33FF33, 0 0 .5px #33FF33, 0 0 .5px #33FF33, 0 0 .5px #33FF33;
+  }
+  to {
+    text-shadow: 0 0 1px #000, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33, 0 0 1px #33FF33;
+  }
+}
+
+.bottom-center {
+  position: absolute !important;
+  bottom: 0;
+  right: 10%;
+}
+
+.down {
+  width: 10px;
+  height: 10px;
+  color: white;
+  border: solid;
+  border-top: none;
+  border-left: none;
+  display: inline-block;
+  position: relative;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%   {top: -5px}
+  50%  {top: 5px}
+  100% {top: -5px}
+}
 </style>
