@@ -20,21 +20,8 @@
       BaseCanvas.fill(style='z-index: 3')
         CanvasParticle
       .container.content
-        // Todo: Add fun johnny for mobile. Who is this johnathan guy anyway?
-        h1.h1.p-2: VueTyper(text='Johnathan Irvin', :repeat='0', :typeDelay='123', caret-animation='blink')
-        p Johnathan Irvin is a Senior Software Engineer with over 
-          | 15 years of experience dreaming, designing, and building 
-          | complex enterprise software systems. 
-        p Using his knowledge as a Senior Software Engineer, Johnathan 
-          | provided technical expertise to the gaming journalist community. 
-        p After years of helping others; Johnathan planned, designed, 
-          | and built a community of his own -- 
-          a(href="https://IGamePress.com") IGamePress 
-        p When Johnathan is not working in Cyber Security or 
-          | video game journalism, Johnathan makes time for contracts 
-          | in various industries. Such as, but not limited to 
-          | manufacturing, finance, trade, and more. 
-          a(href="#contact") Contact Now To Discuss Your Project. 
+        h1.h1.pb-2 Johnathan Irvin
+        p.text-center: VueTyper(:text='what' caret-animation='blink')
       p.bottom-center: i.down
 </template>
 
@@ -54,9 +41,9 @@ export default {
   },
   data: function() {
     return {
-      jobs: ['Senior Software Engineer', 'Journalist', 'Entrepreneur', 'Creator', 'Inventor']
+      what: ['Senior Software Engineer', 'Journalist', 'Entrepreneur', 'Creator', 'Inventor'],
     }
-  }
+  },
 };
 </script>
 
@@ -73,13 +60,14 @@ export default {
 
   p, h1 {
     color: #33FF33;
+    font-family: monospace;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
   }
