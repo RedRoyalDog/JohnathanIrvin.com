@@ -17,7 +17,7 @@
 
 <template lang="pug">
     Section#skills.bg-tan
-            h2.text-center.p-2.h1.text-center Skills
+            h2.text-center.p-2.h1.text-center.d-none Skills
             .flex.text-center
                 i.devicon-css3-plain-wordmark.colored.icon
                 i.devicon-less-plain-wordmark.colored.icon
