@@ -17,9 +17,11 @@
 
 <template lang="pug">
   div
-    TheSectionAbout
-    TheSectionSkills
-    TheSectionContact
+    .row.pb-2
+      TheSectionAbout.col-md-6
+      TheSectionSkills.col-md-6
+    .row
+      TheSectionContact.col
 </template>
 
 <script>
