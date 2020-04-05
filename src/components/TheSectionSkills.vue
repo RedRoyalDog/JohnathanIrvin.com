@@ -29,15 +29,10 @@
                 i.devicon-nodejs-plain-wordmark.colored.icon
                 i.devicon-vuejs-plain-wordmark.colored.icon
                 i.devicon-python-plain-wordmark.colored.icon
-                i.devicon-django-plain.colored.icon
                 i.devicon-csharp-plain-wordmark.colored.icon
                 i.devicon-dot-net-plain-wordmark.colored.icon
-                i.devicon-mysql-plain-wordmark.colored.icon
-                i.devicon-postgresql-plain-wordmark.colored.icon
                 i.devicon-confluence-plain-wordmark.colored.icon
-                i.devicon-ssh-plain-wordmark.colored.icon
                 i.devicon-docker-plain-wordmark.colored.icon
-                i.devicon-trello-plain-wordmark.colored.icon
                 i.devicon-git-plain-wordmark.colored.icon
 </template>
 

@@ -17,7 +17,7 @@
 
 <template lang="pug">
   div
-    .row.pb-2
+    .row.pb-2(style="min-height: 100vh;")
       TheSectionAbout.col-md-6
       TheSectionSkills.col-md-6
     .row
