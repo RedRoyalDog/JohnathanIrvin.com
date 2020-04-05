@@ -28,7 +28,6 @@
             i.devicon-vuejs-plain-wordmark.colored.icon
             i.devicon-python-plain-wordmark.colored.icon
             i.devicon-csharp-plain-wordmark.colored.icon
-            i.devicon-dot-net-plain-wordmark.colored.icon
             i.devicon-confluence-plain-wordmark.colored.icon
             i.devicon-docker-plain-wordmark.colored.icon
             i.devicon-git-plain-wordmark.colored.icon
