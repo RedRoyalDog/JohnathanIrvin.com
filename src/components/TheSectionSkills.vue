@@ -42,8 +42,6 @@
                 i.devicon-docker-plain-wordmark.colored.icon
                 i.devicon-trello-plain-wordmark.colored.icon
                 i.devicon-git-plain-wordmark.colored.icon
-                i.devicon-github-plain-wordmark.colored.icon
-                i.devicon-gitlab-plain-wordmark.colored.icon
 </template>
 
 <script>
