@@ -20,8 +20,6 @@
         h2.text-center.p-2.h1.text-center.d-none Skills
         .flex.text-center
             i.devicon-css3-plain-wordmark.colored.icon
-            i.devicon-less-plain-wordmark.colored.icon
-            i.devicon-sass-original.colored.icon
             i.devicon-html5-plain-wordmark.colored.icon
             i.devicon-javascript-plain.colored.icon
             i.devicon-bootstrap-plain.colored.icon
