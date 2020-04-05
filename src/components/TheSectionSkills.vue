@@ -38,7 +38,6 @@
                 i.devicon-postgresql-plain-wordmark.colored.icon
                 i.devicon-confluence-plain-wordmark.colored.icon
                 i.devicon-ssh-plain-wordmark.colored.icon
-                i.devicon-devicon-plain-wordmark.icon
                 i.devicon-docker-plain-wordmark.colored.icon
                 i.devicon-trello-plain-wordmark.colored.icon
                 i.devicon-git-plain-wordmark.colored.icon
