@@ -31,11 +31,9 @@
                 i.devicon-webpack-plain-wordmark.colored.icon
                 i.devicon-babel-plain.colored.icon
                 i.devicon-python-plain-wordmark.colored.icon
-                i.devicon-pycharm-plain-wordmark.colored.icon
                 i.devicon-django-plain.colored.icon
                 i.devicon-csharp-plain-wordmark.colored.icon
                 i.devicon-dot-net-plain-wordmark.colored.icon
-                i.devicon-visualstudio-plain-wordmark.colored.icon
                 i.devicon-gulp-plain.colored.icon
                 i.devicon-mysql-plain-wordmark.colored.icon
                 i.devicon-postgresql-plain-wordmark.colored.icon
