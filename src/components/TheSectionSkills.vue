@@ -28,8 +28,6 @@
                 i.devicon-jquery-plain-wordmark.colored.icon
                 i.devicon-nodejs-plain-wordmark.colored.icon
                 i.devicon-vuejs-plain-wordmark.colored.icon
-                i.devicon-webpack-plain-wordmark.colored.icon
-                i.devicon-babel-plain.colored.icon
                 i.devicon-python-plain-wordmark.colored.icon
                 i.devicon-django-plain.colored.icon
                 i.devicon-csharp-plain-wordmark.colored.icon
