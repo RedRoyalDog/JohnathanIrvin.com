@@ -44,8 +44,6 @@
                 i.devicon-git-plain-wordmark.colored.icon
                 i.devicon-github-plain-wordmark.colored.icon
                 i.devicon-gitlab-plain-wordmark.colored.icon
-                i.devicon-chrome-plain-wordmark.colored.icon
-                i.devicon-firefox-plain-wordmark.colored.icon
 </template>
 
 <script>
