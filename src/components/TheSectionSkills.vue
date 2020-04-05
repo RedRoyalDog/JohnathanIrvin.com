@@ -16,24 +16,24 @@
  */
 
 <template lang="pug">
-    Section#skills.bg-tan
-            h2.text-center.p-2.h1.text-center.d-none Skills
-            .flex.text-center
-                i.devicon-css3-plain-wordmark.colored.icon
-                i.devicon-less-plain-wordmark.colored.icon
-                i.devicon-sass-original.colored.icon
-                i.devicon-html5-plain-wordmark.colored.icon
-                i.devicon-javascript-plain.colored.icon
-                i.devicon-bootstrap-plain.colored.icon
-                i.devicon-jquery-plain-wordmark.colored.icon
-                i.devicon-nodejs-plain-wordmark.colored.icon
-                i.devicon-vuejs-plain-wordmark.colored.icon
-                i.devicon-python-plain-wordmark.colored.icon
-                i.devicon-csharp-plain-wordmark.colored.icon
-                i.devicon-dot-net-plain-wordmark.colored.icon
-                i.devicon-confluence-plain-wordmark.colored.icon
-                i.devicon-docker-plain-wordmark.colored.icon
-                i.devicon-git-plain-wordmark.colored.icon
+    Section#skills.bg-tan(container-classes="align-center")
+        h2.text-center.p-2.h1.text-center.d-none Skills
+        .flex.text-center
+            i.devicon-css3-plain-wordmark.colored.icon
+            i.devicon-less-plain-wordmark.colored.icon
+            i.devicon-sass-original.colored.icon
+            i.devicon-html5-plain-wordmark.colored.icon
+            i.devicon-javascript-plain.colored.icon
+            i.devicon-bootstrap-plain.colored.icon
+            i.devicon-jquery-plain-wordmark.colored.icon
+            i.devicon-nodejs-plain-wordmark.colored.icon
+            i.devicon-vuejs-plain-wordmark.colored.icon
+            i.devicon-python-plain-wordmark.colored.icon
+            i.devicon-csharp-plain-wordmark.colored.icon
+            i.devicon-dot-net-plain-wordmark.colored.icon
+            i.devicon-confluence-plain-wordmark.colored.icon
+            i.devicon-docker-plain-wordmark.colored.icon
+            i.devicon-git-plain-wordmark.colored.icon
 </template>
 
 <script>
@@ -48,14 +48,23 @@ export default {
 };
 </script>
 
+<style lang="scss">
+#skills {
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
+
 <style scoped>
     #skills {
-        max-width: 100vw;
-        overflow-x: hidden;
+        min-height: 100%;
     }
 
     .flex {
         display: flex;
+        align-content: center;
         justify-content: space-around;
         flex-wrap: wrap;
         padding: 10px;
