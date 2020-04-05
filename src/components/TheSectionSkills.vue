@@ -33,7 +33,6 @@
                 i.devicon-python-plain-wordmark.colored.icon
                 i.devicon-pycharm-plain-wordmark.colored.icon
                 i.devicon-django-plain.colored.icon
-                i.devicon-wordpress-plain-wordmark.colored.icon
                 i.devicon-csharp-plain-wordmark.colored.icon
                 i.devicon-dot-net-plain-wordmark.colored.icon
                 i.devicon-visualstudio-plain-wordmark.colored.icon
@@ -53,12 +52,7 @@
                 i.devicon-github-plain-wordmark.colored.icon
                 i.devicon-gitlab-plain-wordmark.colored.icon
                 i.devicon-chrome-plain-wordmark.colored.icon
-                i.devicon-google-plain-wordmark.colored.icon
                 i.devicon-firefox-plain-wordmark.colored.icon
-                i.devicon-ie10-original.colored.icon
-                i.devicon-facebook-plain.colored.icon
-                i.devicon-twitter-plain.colored.icon
-                i.devicon-slack-plain-wordmark.colored.icon
 </template>
 
 <script>
