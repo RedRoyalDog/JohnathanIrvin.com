@@ -16,11 +16,11 @@
  */
 
 <template lang="pug">
-    Section#about.align-center
+    Section#about(container-classes="align-center")
       BaseCanvas.fill(style='z-index: 3')
         CanvasParticle
       .container.content
-        h1.h1.pb-2 Johnathan Irvin
+        h1.h1.pb-2.text-center Johnathan Irvin
         p.text-center: VueTyper(:text='what' caret-animation='blink')
       p.bottom-center: i.down
 </template>
@@ -46,6 +46,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+#about {
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 #about {
@@ -86,11 +95,6 @@ export default {
   right: 0;
   position: absolute;
   z-index: 1;
-}
-
-.align-center {
-  display: flex;
-  align-items: center;
 }
 
 .fill {

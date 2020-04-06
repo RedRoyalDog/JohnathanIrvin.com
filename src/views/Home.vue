@@ -17,9 +17,11 @@
 
 <template lang="pug">
   div
-    TheSectionAbout
-    TheSectionSkills
-    TheSectionContact
+    .row(style="min-height: 100vh;")
+      TheSectionAbout.col-md-6
+      TheSectionSkills.col-md-6
+    .row.pt-2
+      TheSectionContact.col
 </template>
 
 <script>

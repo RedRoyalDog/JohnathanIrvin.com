@@ -19,7 +19,7 @@
     section.navSection(
         :class="{ 'bg-dark': dark, 'text-light': dark }"
     )
-        .container
+        .container(:class="containerClasses")
             slot
 </template>
 
@@ -32,14 +32,17 @@ export default {
       default: false,
       required: false,
     },
+    containerClasses: {
+      required: false
+    }
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .navSection {
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh;
-    padding-bottom: 56px;
+    .container {
+      min-height: 100%;
+    }
 }
 </style>
