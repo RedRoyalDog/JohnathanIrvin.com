@@ -20,8 +20,8 @@
       BaseCanvas.fill(style='z-index: 3')
         CanvasParticle
       .container.content
-        h1.h1.pb-2 Johnathan Irvin
-        p: VueTyper(:text='what' caret-animation='blink')
+        h1.h1.pb-2.text-center Johnathan Irvin
+        p.text-center: VueTyper(:text='what' caret-animation='blink')
       p.bottom-center: i.down
 </template>
 

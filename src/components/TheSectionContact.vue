@@ -16,7 +16,7 @@
  */
 
 <template lang="pug">
-    Section#contact.flex: b-container
+    Section#contact.flex.bg-tan: b-container
         h2.text-center.h1 Contact
         FormContact
 </template>
@@ -39,5 +39,9 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+      .bg-tan {
+        background-color: #f8f9fa;
     }
 </style>

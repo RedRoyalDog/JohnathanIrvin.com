@@ -16,7 +16,7 @@
  */
 
 <template lang="pug">
-    Section#skills.bg-tan(container-classes="align-center")
+    Section#skills(container-classes="align-center")
         h2.text-center.p-2.h1.text-center.d-none Skills
         .flex.text-center
             i.devicon-css3-plain-wordmark.colored.icon
@@ -55,10 +55,6 @@ export default {
 </style>
 
 <style scoped>
-    #skills {
-        min-height: 100%;
-    }
-
     .flex {
         display: flex;
         align-content: center;
@@ -74,9 +70,5 @@ export default {
     .icon {
         margin: 10px;
         min-width: 20%;
-    }
-
-    .bg-tan {
-        background-color: #f8f9fa;
     }
 </style>
