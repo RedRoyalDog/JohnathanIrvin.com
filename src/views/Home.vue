@@ -20,20 +20,16 @@
     .row(style="min-height: 100vh;")
       TheSectionAbout.col-md-6
       TheSectionSkills.col-md-6
-    .row.pt-2
-      TheSectionContact.col
 </template>
 
 <script>
 import TheSectionAbout from '../components/TheSectionAbout';
-import TheSectionContact from '../components/TheSectionContact';
 import TheSectionSkills from '../components/TheSectionSkills';
 
 export default {
   name: 'Home',
   components: {
     TheSectionAbout,
-    TheSectionContact,
     TheSectionSkills,
   },
 };
