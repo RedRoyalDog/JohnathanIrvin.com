@@ -49,6 +49,8 @@ export default {
 
 <style lang="scss">
 #about {
+  min-height: 50vh;
+
   .align-center {
     display: flex;
     align-items: center;
@@ -137,7 +139,7 @@ export default {
 .bottom-center {
   position: absolute !important;
   bottom: 0;
-  right: 10%;
+  right: 50%;
 }
 
 .down {
