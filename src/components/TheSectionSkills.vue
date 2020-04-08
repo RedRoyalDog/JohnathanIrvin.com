@@ -16,21 +16,21 @@
  */
 
 <template lang="pug">
-    Section#skills(container-classes="align-center")
-        h2.text-center.p-2.h1.text-center.d-none Skills
-        .flex.text-center
-            i.devicon-css3-plain-wordmark.colored.icon
-            i.devicon-html5-plain-wordmark.colored.icon
-            i.devicon-javascript-plain.colored.icon
-            i.devicon-bootstrap-plain.colored.icon
-            i.devicon-jquery-plain-wordmark.colored.icon
-            i.devicon-nodejs-plain-wordmark.colored.icon
-            i.devicon-vuejs-plain-wordmark.colored.icon
-            i.devicon-python-plain-wordmark.colored.icon
-            i.devicon-csharp-plain-wordmark.colored.icon
-            i.devicon-confluence-plain-wordmark.colored.icon
-            i.devicon-docker-plain-wordmark.colored.icon
-            i.devicon-git-plain-wordmark.colored.icon
+  Section#skills(container-classes="align-center")
+    h2.text-center.p-2.h1.text-center.d-none Skills
+    .flex.text-center.icons
+      i.devicon-css3-plain-wordmark.colored.icon
+      i.devicon-html5-plain-wordmark.colored.icon
+      i.devicon-javascript-plain.colored.icon
+      i.devicon-bootstrap-plain.colored.icon
+      i.devicon-jquery-plain-wordmark.colored.icon
+      i.devicon-nodejs-plain-wordmark.colored.icon
+      i.devicon-vuejs-plain-wordmark.colored.icon
+      i.devicon-python-plain-wordmark.colored.icon
+      i.devicon-csharp-plain-wordmark.colored.icon
+      i.devicon-confluence-plain-wordmark.colored.icon
+      i.devicon-docker-plain-wordmark.colored.icon
+      i.devicon-git-plain-wordmark.colored.icon
 </template>
 
 <script>
@@ -51,24 +51,28 @@ export default {
     display: flex;
     align-items: center;
   }
+
+  .icons {
+    font-size: 0.9rem;
+  }
 }
 </style>
 
 <style scoped>
-    .flex {
-        display: flex;
-        align-content: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 10px;
-    }
+.flex {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+}
 
-    .icon::before {
-        font-size: 6em;
-    }
+.icon::before {
+  font-size: 6em;
+}
 
-    .icon {
-        margin: 10px;
-        min-width: 20%;
-    }
+.icon {
+  margin: 10px;
+  min-width: 20%;
+}
 </style>
