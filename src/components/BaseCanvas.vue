@@ -17,21 +17,22 @@
 
 <template lang="pug">
   div
-    canvas(ref="base-canvas")
+    canvas(ref="base-canvas" :style="canvasStyle")
     slot
 </template>
 
 <script>
 export default {
-  data() {
+  data: () => {
     return {
       provider: {
         context: null,
         width: null,
-        height: null
+        height: null,
       },
     };
   },
+  props: ['canvasStyle'],
   provide() {
     return {
       provider: this.provider
@@ -48,7 +49,6 @@ export default {
   },
   mounted() {
     this.provider.context = this.$refs['base-canvas'].getContext('2d');
-
     this.resize();
 
     window.addEventListener('resize', this.resize.bind(this));

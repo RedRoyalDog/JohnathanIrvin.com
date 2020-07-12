@@ -17,7 +17,7 @@
 
 <template lang="pug">
     BaseSection#about(container-classes="align-center")
-      BaseCanvas.fill(style='z-index: 3')
+      BaseCanvas.fill(style='z-index: 3;' canvasStyle="position: absolute")
         CanvasParticle
       .container.content
         h1.h1.pb-2.text-center Johnathan Irvin
