@@ -16,7 +16,7 @@
  */
 
 <template lang="pug">
-  Section#skills(container-classes="align-center")
+  BaseSection#skills(container-classes="align-center")
     h2.text-center.p-2.h1.text-center.d-none Skills
     .flex.text-center.icons
       i.devicon-css3-plain-wordmark.colored.icon
@@ -35,12 +35,12 @@
 
 <script>
 import 'devicon';
-import Section from './Section';
+import BaseSection from './BaseSection';
 
 export default {
   name: 'TheSectionSkills',
   components: {
-    Section,
+    BaseSection
   },
 };
 </script>

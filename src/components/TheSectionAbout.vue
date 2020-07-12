@@ -16,8 +16,8 @@
  */
 
 <template lang="pug">
-    Section#about(container-classes="align-center")
-      BaseCanvas.fill(style='z-index: 3')
+    BaseSection#about(container-classes="align-center")
+      BaseCanvas.fill(style='z-index: 3;' canvasStyle="position: absolute")
         CanvasParticle
       .container.content
         h1.h1.pb-2.text-center Johnathan Irvin
@@ -28,7 +28,7 @@
 <script>
 import BaseCanvas from '../components/BaseCanvas';
 import CanvasParticle from '../components/CanvasParticle';
-import Section from './Section';
+import BaseSection from './BaseSection';
 import { VueTyper } from 'vue-typer'
 
 export default {
@@ -36,7 +36,7 @@ export default {
   components: {
     BaseCanvas,
     CanvasParticle,
-    Section,
+    BaseSection,
     VueTyper
   },
   data: function() {
@@ -86,7 +86,6 @@ export default {
 
 #about::after {
   content: "";
-  background: url(../assets/img1.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   opacity: 0.39;
