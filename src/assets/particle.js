@@ -15,18 +15,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-<template lang="pug">
-  #app: router-view
-</template>
+export { Particle };
 
-<script>
-export default {
-  name: 'app',
-};
-</script>
-
-<style scoped>
-  #app {
-    overflow-x: hidden;
+class Particle {
+  constructor(x = 0, y = 0, speed = Math.random() * 0.9, directionAngle = Math.floor(Math.random() * 360)) {
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
+    this.directionAngle = directionAngle;
+    this.vector = {
+      x: Math.cos(this.directionAngle) * this.speed,
+      y: Math.sin(this.directionAngle) * this.speed,
+    };
   }
-</style>
+
+  update() {
+    this.x += this.vector.x;
+    this.y += this.vector.y;
+  }
+}

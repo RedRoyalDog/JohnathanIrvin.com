@@ -14,20 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'prismjs/themes/prism.css'
+import '~/assets/site.css'
+import DefaultLayout from '~/layouts/Default.vue'
 
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import BootstrapVue from 'bootstrap-vue';
-import './styles/site.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-Vue.config.productionTip = false;
+export default function (Vue, { router, head, isClient }) {
+  Vue.component('Layout', DefaultLayout)
+  Vue.use(BootstrapVue)
 
-Vue.use(BootstrapVue);
-
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount('#app');
+  head.meta.push({
+    name: 'keywords',
+    content: 'Vue,JavaScript,HTML,CSS,Vue.js,VueJS,Bootstrap,C#'
+  })
+  
+  head.meta.push({
+    name: 'author',
+    content: 'Johnathan Irvin'
+  })
+}
