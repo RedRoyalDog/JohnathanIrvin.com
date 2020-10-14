@@ -25,7 +25,12 @@ Layout
 
 <script lang="ts">
 export default {
-    name: "Post"
+  name: "Post",
+  metaInfo() {
+    return {
+      title: this.$page.post.title
+    }
+  }
 }
 </script>
 
