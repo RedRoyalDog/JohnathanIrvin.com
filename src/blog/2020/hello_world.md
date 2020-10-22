@@ -4,7 +4,7 @@ date: 2020-10-10
 description: Symbolic "Hello World" introductory post inspired by an introductory program first found in 1972 in A Tutorial Introduction to the Language B by Bell Laboratories.
 ---
 
-For many programmers, the first program they write in any given language is the "Hello World" program first found in [A Tutorial Introductions to the Language B by Bell Laboratories](https://www.bell-labs.com/usr/dmr/www/bintro.html). It seemed apt to label this article accordingly and incorporate "Hello World" into the content. As an homage to the history of programming, let's write this simple program.
+For many programmers, the first program they write in any given language is the "Hello World" program first found in *[A Tutorial Introduction to the Language B by Bell Laboratories](https://www.bell-labs.com/usr/dmr/www/bintro.html)*. It seemed apt to label this article accordingly and incorporate "Hello World" into the content. As an homage to the history of programming, let's write this simple program.
 
 ## Prerequisites
 
