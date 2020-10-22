@@ -27,7 +27,6 @@ module.exports = {
 			use: '@gridsome/source-filesystem',
 			options: {
 				typeName: 'Post',
-				route: '/articles/:title',
 				path: 'src/blog/**/*.md',
 			},
 			refs: {
@@ -90,5 +89,17 @@ module.exports = {
 				'@gridsome/remark-prismjs'
 			]
 		}
+	},
+	templates: {
+		Post: [
+			{
+				path: '/articles/:year/:month/:day/:title',
+			},
+			{
+				name: 'redirects',
+				path: '/articles/:title',
+				component: './src/components/Redirect.vue'
+			}
+		]
 	}
 }

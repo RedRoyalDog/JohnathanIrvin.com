@@ -39,16 +39,12 @@ export default {
   },
   metaInfo: {
     title: "Engineer, Journalist, Entrepreneur"
-  }
+  },
 };
 </script>
 
 <page-query>
 query {
-  metadata {
-    siteName
-    siteDescription
-  }
   allPost {
     totalCount
     edges {
