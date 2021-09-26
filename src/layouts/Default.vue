@@ -24,13 +24,13 @@
       ul.navbar-nav
         li.nav-item
           g-link.nav-link(to="/" v-if="this.$route.name != 'home'") Home
-  main
+  main#main
     slot
   footer.bg-accent.border-top
     .container.p-4
       .row
         .col-sm-6.col-12
-          div Copyright 2020. All rights reserved.
+          div Copyright 2020 - 2021. All rights reserved.
           div
             a(href="/rss.xml") RSS Feed
             span  | 
@@ -73,7 +73,11 @@ export default Vue.extend({
 
 <style lang="scss">
 header, footer {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
+}
+
+#main {
+  margin-top: 1rem;
 }
 </style>
