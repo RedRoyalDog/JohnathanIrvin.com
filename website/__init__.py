@@ -21,7 +21,8 @@
 import flask
 
 app = flask.Flask(__name__)
+app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return flask.render_template('index.pug')
