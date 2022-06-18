@@ -1,3 +1,4 @@
+!!! 5
 html 
     head
         block meta
@@ -6,9 +7,44 @@ html
             meta(name="description", content="Johnathan Irvin is a software engineer and researcher based in the Lehigh Valley, PA area.")
             meta(name="keywords", content="Vue,JavaScript,HTML,CSS,Python,VueJS,Bootstrap,C#,Engineer,Software,Coding,Development")
             meta(name="author", content="Johnathan Irvin")
-            meta(name="generator", content="Pug")
 
+        link(
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        )
+        script(
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        )
+
+        block scripts
+        block styles
         block title
             title Engineer, Researcher, Entrepreneur - Johnathan Irvin
+
     body
-        block body
+        .container: header.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.mb-4.border-bottom
+            a(href="/").d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-dark.text-decoration-none
+                span.fs-4 Johnathan Irvin
+        main#main.container
+            block body
+
+        .container
+            footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.border-top
+                p.col-md.4.mb-0.text-muted © 2020 - 2022 Johnathan Irvin
+                ul.nav.col-md-4.justify-content-end.list-unstyled.d-flex
+                    li.ms-3: a.text-muted(href="mailto:irvinjohnathan@gmail.com" target="_blank")
+                        img(src="{{url_for('static', filename='img/envelope.svg')}}", alt="Email")
+                    li.ms-3: a.text-muted(href="https://github.com/JohnnyIrvin" target="_blank")
+                        img(src="{{url_for('static', filename='img/github.svg')}}", alt="Github")
+                    li.ms-3: a.text-muted(href="https://twitter.com/_JohnnyIrvin" target="_blank")
+                        img(src="{{url_for('static', filename='img/twitter.svg')}}", alt="Twitter")
+                    li.ms-3: a.text-muted(href="https://www.linkedin.com/in/johnnyirvin/" target="_blank")
+                        img(src="{{url_for('static', filename='img/linkedin.svg')}}", alt="LinkedIn")
+                ul.nav.list-unstyled.d-flex.col-md-12.justify-content-start.d-flex
+                    li.ms-3: a.text-muted(href="/rss.xml") RSS Feed
+                    li.ms-3: span  | 
+                    li.ms-3: a.text-muted(href="/sitemap.xml") Sitemap
