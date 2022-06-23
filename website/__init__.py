@@ -28,7 +28,7 @@ app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
 repo = blog_repositories.PostRepository('blog')
 
 @app.route('/')
-def index():
+def index() -> str:
     return flask.render_template(
         'index.pug',
         posts=sorted(
@@ -38,8 +38,8 @@ def index():
         )
     )
 
-@app.route('/articles/<year>/<month>/<day>/<description>')
-def article(year, month, day, description):
+@app.route('/articles/<int:year>/<int:month>/<int:day>/<string:description>')
+def article(year: int, month: int, day: int, description: str) -> str:
     try:
         post = repo.get(f"{year}/{month}/{day}/{description}")
     except Repository.NotFound:
@@ -57,5 +57,5 @@ def article(year, month, day, description):
     )
 
 @app.errorhandler(404)
-def not_found(error):
+def not_found(error: Exception) -> str:
     return flask.render_template('404.pug')
