@@ -19,10 +19,20 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import flask
+from website.repositories import Repository, blog_repositories
 
 app = flask.Flask(__name__)
 app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
+repo = blog_repositories.PostRepository('blog')
 
 @app.route('/')
 def index():
-    return flask.render_template('index.pug')
+    return flask.render_template(
+        'index.pug',
+        posts=sorted(
+            repo.get_all(),
+            key=lambda post: post.date,
+            reverse=True,
+        )
+    )
+

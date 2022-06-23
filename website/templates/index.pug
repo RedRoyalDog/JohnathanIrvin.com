@@ -1,5 +1,12 @@
 extends layout.pug
 
 block body
-    h1 Hello
-    p World
+    h1.d-none Johnathan Irvin's Blog
+    // {% for post in posts %}
+    .post
+        h2.post-title.h3: a(href='/articles/{{post.get_identifier()}}')
+            | {{ post.title }}
+        p.post-date.text-muted {{ post.date.strftime('%B %d, %Y') }}
+        p.post-content.lh-base
+            | {{ post.description }}
+    // {% endfor %}
