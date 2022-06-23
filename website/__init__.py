@@ -19,6 +19,8 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import flask
+import markdown
+
 from website.repositories import Repository, blog_repositories
 
 app = flask.Flask(__name__)
@@ -33,6 +35,21 @@ def index():
             repo.get_all(),
             key=lambda post: post.date,
             reverse=True,
+        )
+    )
+
+@app.route('/articles/<year>/<month>/<day>/<description>')
+def article(year, month, day, description):
+    post = repo.get(f"{year}/{month}/{day}/{description}")
+
+    return flask.render_template(
+        'article.pug',
+        title=post.title,
+        # Day Month Year
+        date=post.date.strftime('%d %B %Y'),
+        content=markdown.markdown(
+            post.content,
+            extensions=['fenced_code', 'toc', 'tables'],
         )
     )
 
