@@ -40,7 +40,10 @@ def index():
 
 @app.route('/articles/<year>/<month>/<day>/<description>')
 def article(year, month, day, description):
-    post = repo.get(f"{year}/{month}/{day}/{description}")
+    try:
+        post = repo.get(f"{year}/{month}/{day}/{description}")
+    except Repository.NotFound:
+        flask.abort(404)
 
     return flask.render_template(
         'article.pug',
@@ -53,3 +56,6 @@ def article(year, month, day, description):
         )
     )
 
+@app.errorhandler(404)
+def not_found(error):
+    return flask.render_template('404.pug')
