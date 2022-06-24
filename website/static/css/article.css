@@ -1,0 +1,20 @@
+main > article > p > a {
+  color: #000 !important;
+  border-bottom: 1px dotted;
+  text-decoration: none !important;
+}
+
+main > article > p > a:link {
+  color: #000 !important;
+  border-bottom: 1px dotted;
+}
+
+main > article > p > a:visited {
+  color: #000 !important;
+  border-bottom: 1px dotted;
+}
+
+main > article > p > a:hover {
+    color: #222 !important;
+    border-bottom: 2px thick; 
+  }

@@ -1,5 +1,8 @@
 extends layout.pug
 
+block styles
+    link(href="{{ url_for('static', filename='css/article.css') }}", rel="stylesheet")
+
 block body
     h1.post-title.h1 {{title}}
     p.post-date {{date}}
