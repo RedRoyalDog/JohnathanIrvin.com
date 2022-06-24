@@ -79,7 +79,22 @@ def rss() -> str:
     response.mimetype = 'application/xml'
     return response
 
-
+@app.route('/sitemap.xml')
+@app.route('/sitemap')
+def sitemap() -> str:
+    sorted_items = sorted(
+        repo.get_all(),
+        key=lambda post: post.date,
+        reverse=True,
+    )
+    response = flask.make_response(
+        flask.render_template(
+            'sitemap.xml',
+            items=sorted_items,
+        )
+    )
+    response.mimetype = 'application/xml'
+    return response
 
 @app.errorhandler(404)
 def not_found(error: Exception) -> str:

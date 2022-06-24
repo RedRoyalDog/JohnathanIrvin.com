@@ -1,0 +1,7 @@
+<urlset>
+    {% for item in items %}
+        <url>
+            <loc>{{ 'articles/' + item.get_identifier() }}</loc>
+        </url>
+    {% endfor %}
+</urlset>
