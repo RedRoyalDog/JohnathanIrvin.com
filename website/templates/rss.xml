@@ -1,0 +1,19 @@
+<rss version="2.0">
+    <channel>
+        <title>{{ title }}</title>
+        <description>{{ description }}</description>
+        <link>{{ link }}</link>
+        <generator>RSS for Johnny</generator>
+        <lastBuildDate>{{ lastBuildDate }}</lastBuildDate>
+        <language>en-us</language>
+        {% for item in items %}
+            <item>
+                <title>{{ item.title }}</title>
+                <link>{{ item.get_identifier() }}</link>
+                <description>{{ item.description }}</description>
+                <pubDate>{{ item.date }}</pubDate>
+                <author>Johnthan Irvin</author>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

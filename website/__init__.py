@@ -56,6 +56,31 @@ def article(year: int, month: int, day: int, description: str) -> str:
         )
     )
 
+@app.route('/rss.xml')
+@app.route('/feed.xml')
+@app.route('/rss')
+@app.route('/feed')
+def rss() -> str:
+    sorted_items = sorted(
+        repo.get_all(),
+        key=lambda post: post.date,
+        reverse=True,
+    )
+    response = flask.make_response(
+        flask.render_template(
+            'rss.xml',
+            title='Johnathan Irvin',
+            description='Engineer, Researcher, Entrepreneur',
+            link='https://johnathanirvin.com',
+            lastBuildDate=sorted_items[0].date,
+            items=sorted_items,
+        )
+    )
+    response.mimetype = 'application/xml'
+    return response
+
+
+
 @app.errorhandler(404)
 def not_found(error: Exception) -> str:
     return flask.render_template('404.pug')
