@@ -9,7 +9,7 @@
         {% for item in items %}
             <item>
                 <title>{{ item.title }}</title>
-                <link>{{ item.get_identifier() }}</link>
+                <link>{{ 'articles/' + item.get_identifier() }}</link>
                 <description>{{ item.description }}</description>
                 <pubDate>{{ item.date }}</pubDate>
                 <author>Johnthan Irvin</author>
