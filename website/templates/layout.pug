@@ -21,6 +21,17 @@ html
             crossorigin="anonymous"
         )
 
+        // {% if not config.DEBUG %}
+        // Global site tag (gtag.js) - Google Analytics
+        script(
+            async src="https://www.googletagmanager.com/gtag/js?id=G-TRBJKSZ5W1"
+        ).
+            window.dataLayer = window.dataLayer || []
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date())
+            gtag('config', 'G-TRBJKSZ5W1')
+        // {% endif %}
+
         block scripts
         block styles
         block title
