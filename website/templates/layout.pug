@@ -25,11 +25,12 @@ html
         // Global site tag (gtag.js) - Google Analytics
         script(
             async src="https://www.googletagmanager.com/gtag/js?id=G-TRBJKSZ5W1"
-        ).
-            window.dataLayer = window.dataLayer || []
-            function gtag(){dataLayer.push(arguments)}
-            gtag('js', new Date())
-            gtag('config', 'G-TRBJKSZ5W1')
+        )
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TRBJKSZ5W1');
         // {% endif %}
 
         block scripts
