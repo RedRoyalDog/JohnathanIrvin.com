@@ -9,7 +9,6 @@ It is highly recommended to use a virtual environment to keep your project isola
 Inside of a python environment, you can import the requirements and run the application using gunicorn or flask run.
 
 ```bash
-pip install gunicorn
 pip install -r requirements.txt
 gunicorn website:app
 ```
