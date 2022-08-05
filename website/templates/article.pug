@@ -1,5 +1,8 @@
 extends layout.pug
 
+block title
+    title {{ title }} - Johnathan Irvin
+
 block styles
     link(href="{{ url_for('static', filename='css/article.css') }}", rel="stylesheet")
 
