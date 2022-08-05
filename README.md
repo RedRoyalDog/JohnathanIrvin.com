@@ -10,7 +10,22 @@ Inside of a python environment, you can import the requirements and run the appl
 
 ```bash
 pip install -r requirements.txt
-gunicorn website:app
+FLASK_ENV=development gunicorn website:app
+```
+
+Docker may be used to run the application.
+
+```bash
+docker build -t johnathanirvin/website .
+docker run -p 8000:8000 johnathanirvin/website
+```
+
+# Testing
+
+Use pytest to run tests.
+
+```bash
+python -m pytest tests/
 ```
 
 # License
