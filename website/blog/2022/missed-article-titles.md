@@ -1,6 +1,6 @@
 ---
 title: Forgotten Article Titles
-date: 2022-08-12
+date: 2022-08-13
 description: Article titles disappeared from the website titling after the rewrite. A simple mistake correlated to feature parity when rewriting software in a corporate setting. The fix prevents future regressions.
 ---
 
@@ -51,7 +51,7 @@ Snapshot tests are a great way to ensure that your UI does not break unexpectedl
 
 I am lazy and chose to write snapshot tests. See this [commit](https://github.com/JohnnyIrvin/Website/commit/42a5402bdac82a950d9d9ef3cc10a6743431ab2e) to see these tests.
 
-## Automation Golemns
+## Automation Golems
 
 Automated testing is a process where automation tools execute software tests without manual intervention. The process improves the quality of the software and ensures that it meets the required standards.
 
