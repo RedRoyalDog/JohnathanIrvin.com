@@ -26,6 +26,12 @@ Use pytest to run tests.
 
 ```bash
 python -m pytest tests/
+``` 
+
+If you would like to update the snapshot tests, you can use the following command.
+
+```bash
+python -m pytest tests/ --update-snapshot
 ```
 
 # License
