@@ -1,0 +1,14 @@
+extends layout.pug
+
+block title
+    title Images - Johnathan Irvin
+
+block content
+    .d-flex.justify-content-center.flex-wrap
+        // {% for image in images %}
+        img.flex(
+            src='/images/{{ image }}',
+            width='200px',
+            height='200px'
+        )
+        // {% endfor %}

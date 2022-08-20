@@ -4,10 +4,8 @@ block header
     .container: header.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.mb-4.border-bottom
         a(href="/").d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-dark.text-decoration-none
             span.fs-4 Johnathan Irvin
-        ul.d-flex.flex-wrap.justify-content-between.align-items-center.list-unstyled.mb-0.mb-md-auto
-            li.d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-dark.text-decoration-none
-                a(href="{{ url_for('images') }}").d-flex.align-items-center.text-dark.text-decoration-none
-                    span Images
+        a(href="{{ url_for('images') }}").text-muted
+            span Images
 
 block body
     main#main.container

@@ -18,6 +18,8 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import os
+
 import flask
 import markdown
 
@@ -25,23 +27,58 @@ from website.repositories import Repository, blog_repositories
 
 app = flask.Flask(__name__)
 app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
-repo = blog_repositories.PostRepository('blog')
+blog_repo = blog_repositories.PostRepository('blog')
 
 @app.route('/')
 def index() -> str:
     return flask.render_template(
         'index.pug',
         posts=sorted(
-            repo.get_all(),
+            blog_repo.get_all(),
             key=lambda post: post.date,
             reverse=True,
         )
     )
 
+@app.route('/images')
+def images() -> str:
+    """
+    Returns a list of all images in the images directory.
+
+    Returns:
+        str: The rendered template.
+    """    
+    images = []
+    directory = os.path.join('website', 'images')
+
+    for image in os.listdir(directory):
+        images.append(image.replace(' ', '_'))
+    
+    return flask.render_template(
+        'images.pug',
+        images=images
+    )
+
+@app.route('/images/<string:name>')
+def image(name: str) -> str:
+    """
+    Returns the image with the given name.
+
+    Args:
+        name: The name of the image.
+    
+    Returns:
+        str: The rendered template.
+    """ 
+    return flask.send_from_directory(
+        "images",
+        name.lower().replace('_', ' ')
+    )
+
 @app.route('/articles/<int:year>/<int:month>/<int:day>/<string:description>')
 def article(year: int, month: int, day: int, description: str) -> str:
     try:
-        post = repo.get(f"{year}/{month}/{day}/{description}")
+        post = blog_repo.get(f"{year}/{month}/{day}/{description}")
     except Repository.NotFound:
         flask.abort(404)
 
@@ -62,7 +99,7 @@ def article(year: int, month: int, day: int, description: str) -> str:
 @app.route('/feed')
 def rss() -> str:
     sorted_items = sorted(
-        repo.get_all(),
+        blog_repo.get_all(),
         key=lambda post: post.date,
         reverse=True,
     )
@@ -83,7 +120,7 @@ def rss() -> str:
 @app.route('/sitemap')
 def sitemap() -> str:
     sorted_items = sorted(
-        repo.get_all(),
+        blog_repo.get_all(),
         key=lambda post: post.date,
         reverse=True,
     )
