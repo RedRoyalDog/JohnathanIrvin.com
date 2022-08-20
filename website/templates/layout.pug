@@ -2,9 +2,9 @@ extends document.pug
 
 block header
     .container: header.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.mb-4.border-bottom
-        a(href="/").d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-dark.text-decoration-none
+        a(href="/").flex.text-muted.text-decoration-none
             span.fs-4 Johnathan Irvin
-        a(href="{{ url_for('images') }}").text-muted
+        a(href="{{ url_for('images') }}").flex.text-muted
             span Images
 
 block body
