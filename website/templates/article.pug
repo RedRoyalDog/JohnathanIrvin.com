@@ -6,7 +6,7 @@ block title
 block styles
     link(href="{{ url_for('static', filename='css/article.css') }}", rel="stylesheet")
 
-block body
+block content
     h1.post-title.h1 {{title}}
     p.post-date {{date}}
     article {{content}}
