@@ -31,7 +31,7 @@ python -m pytest tests/
 If you would like to update the snapshot tests, you can use the following command.
 
 ```bash
-python -m pytest tests/ --update-snapshot
+python -m pytest tests/ --snapshot-update
 ```
 
 # License
