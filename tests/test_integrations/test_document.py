@@ -30,6 +30,15 @@ def test_document_found(client) -> None:
     """    
     assert client.get("/").status_code == 200
 
+def test_document_not_found(client) -> None:
+    """
+    Test that the main document can be found.
+    
+    Args:
+        client (test_client): The test client for the Flask application.
+    """    
+    assert client.get("/notfound").status_code == 404
+
 @pytest.mark.parametrize("name, content", [
     ("viewport", "width=device-width, initial-scale=1"),
     ("description", "Johnathan Irvin is a software engineer and researcher based on planet Earth, serving the local solar system. You know, because remote work is a thing, and so is latency."),
