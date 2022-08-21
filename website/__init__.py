@@ -135,4 +135,4 @@ def sitemap() -> str:
 
 @app.errorhandler(404)
 def not_found(error: Exception) -> str:
-    return flask.render_template('404.pug')
+    return flask.render_template('404.pug'), 404
