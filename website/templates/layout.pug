@@ -4,8 +4,11 @@ block header
     .container: header.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.mb-4.border-bottom
         a(href="/").flex.text-muted.text-decoration-none
             span.fs-4 Johnathan Irvin
-        a(href="{{ url_for('images') }}").flex.text-muted
-            span Images
+        .flex
+            a(href="{{ url_for('faq') }}").text-decoration-none.text-muted.p-2
+                span faq
+            a(href="{{ url_for('images') }}").text-decoration-none.text-muted.p-2
+                span images
 
 block body
     main#main.container
@@ -27,6 +30,6 @@ block footer
                 li.ms-3: a.text-muted(href="https://www.linkedin.com/in/johnnyirvin/" target="_blank")
                     img(src="{{url_for('static', filename='img/linkedin.svg')}}", alt="LinkedIn")
             ul.nav.list-unstyled.d-flex.col-md-12.justify-content-start.d-flex
-                li.ms-3: a.text-muted(href="/rss.xml") RSS Feed
+                li.ms-3: a.text-muted(href="/rss.xml") rss feed
                 li.ms-3: span  | 
-                li.ms-3: a.text-muted(href="/sitemap.xml") Sitemap
+                li.ms-3: a.text-muted(href="/sitemap.xml") sitemap

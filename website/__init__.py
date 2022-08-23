@@ -31,6 +31,12 @@ blog_repo = blog_repositories.PostRepository('blog')
 
 @app.route('/')
 def index() -> str:
+    """
+    Render the index page.
+
+    Returns:
+        str: The rendered index page.
+    """    
     return flask.render_template(
         'index.pug',
         posts=sorted(
@@ -77,6 +83,18 @@ def image(name: str) -> str:
 
 @app.route('/articles/<int:year>/<int:month>/<int:day>/<string:description>')
 def article(year: int, month: int, day: int, description: str) -> str:
+    """
+    Returns the article with the given description.
+
+    Args:
+        year (int): The year of the article.
+        month (int): The month of the article.
+        day (int): The day of the article.
+        description (str): The description of the article.
+
+    Returns:
+        str: The rendered template.
+    """    
     try:
         post = blog_repo.get(f"{year}/{month}/{day}/{description}")
     except Repository.NotFound:
@@ -98,6 +116,12 @@ def article(year: int, month: int, day: int, description: str) -> str:
 @app.route('/rss')
 @app.route('/feed')
 def rss() -> str:
+    """
+    Returns the RSS feed.
+
+    Returns:
+        str: The rendered template.
+    """    
     sorted_items = sorted(
         blog_repo.get_all(),
         key=lambda post: post.date,
@@ -119,6 +143,12 @@ def rss() -> str:
 @app.route('/sitemap.xml')
 @app.route('/sitemap')
 def sitemap() -> str:
+    """
+    Returns a sitemap of the website.
+
+    Returns:
+        str: The rendered template.
+    """    
     sorted_items = sorted(
         blog_repo.get_all(),
         key=lambda post: post.date,
@@ -133,6 +163,31 @@ def sitemap() -> str:
     response.mimetype = 'application/xml'
     return response
 
+
+with open('website/static/faq.md', 'r') as file:
+    QUESTION_MARKDOWN = file.read()
+@app.route('/faq')
+def faq() -> str:
+    """
+    Returns the FAQ page.
+
+    Returns:
+        str: The rendered template.
+    """
+    return flask.render_template(
+        'faq.pug',
+        content=markdown.markdown(
+            QUESTION_MARKDOWN,
+            extensions=['fenced_code', 'toc', 'tables'],
+        )
+    )
+
 @app.errorhandler(404)
 def not_found(error: Exception) -> str:
+    """
+    Returns the 404 page.
+
+    Returns:
+        str: The rendered template.
+    """    
     return flask.render_template('404.pug'), 404
