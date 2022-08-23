@@ -18,6 +18,7 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import bs4
 import pytest
 
 ARTICLE_SLUGS: list = [
@@ -47,7 +48,10 @@ def test_article_snapshots(article_slug: str, client, snapshot) -> None:
         snapshot (pytest_snapshot.plugin.Snapshot): The snapshot plugin.
     """    
     snapshot.snapshot_dir = "tests/snapshots"
+    html = client.get(f"/{article_slug}").text
+    soup = bs4.BeautifulSoup(html, "html.parser")
+
     snapshot.assert_match(
-        client.get(f"/{article_slug}").text,
+        soup.body.prettify(),
         article_slug.split("/")[-1] + ".snapshot.html"
     )

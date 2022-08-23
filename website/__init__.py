@@ -19,6 +19,7 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import os
+import random
 
 import flask
 import markdown
@@ -163,6 +164,29 @@ def sitemap() -> str:
     response.mimetype = 'application/xml'
     return response
 
+
+@app.route('/favicon')
+@app.route('/favicon.ico')
+def favicon() -> flask.Response:
+    """
+    Returns a random favicon from the static -> favicons directory.
+
+    Returns:
+        flask.Response: The image response.
+    """
+    directory = os.path.join(
+        app.root_path,
+        'static',
+        'icons',
+    )
+    images = os.listdir(directory)
+    image = random.choice(images)
+
+    return flask.send_from_directory(
+        directory,
+        image,
+        filename='favicon.ico',
+    )
 
 with open('website/static/faq.md', 'r') as file:
     QUESTION_MARKDOWN = file.read()
