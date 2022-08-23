@@ -185,7 +185,6 @@ def favicon() -> flask.Response:
     return flask.send_from_directory(
         directory,
         image,
-        filename='favicon.ico',
     )
 
 with open('website/static/faq.md', 'r') as file:
