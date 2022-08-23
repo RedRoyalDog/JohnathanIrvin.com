@@ -1,4 +1,5 @@
 attrs==22.1.0
+beautifulsoup4==4.11.1
 blinker==1.4
 cffi==1.15.0
 chardet==4.0.0
@@ -23,5 +24,6 @@ pytest-snapshot==0.9.0
 python-frontmatter==1.0.0
 PyYAML==6.0
 six==1.16.0
+soupsieve==2.3.2.post1
 tomli==2.0.1
 Werkzeug==2.1.2

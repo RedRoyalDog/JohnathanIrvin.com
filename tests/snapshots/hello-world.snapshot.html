@@ -1,76 +1,200 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Johnathan Irvin is a software engineer and researcher based on planet Earth, serving the local solar system. You know, because remote work is a thing, and so is latency.">
-    <meta name="keywords" content="Vue,JavaScript,HTML,CSS,Python,VueJS,Bootstrap,C#,Engineer,Software,Coding,Development">
-    <meta name="author" content="Johnathan Irvin">
-    <link rel="shortcut icon" href="/static/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- -->
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRBJKSZ5W1"></script>
-    <script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-TRBJKSZ5W1');
-    </script>
-
-    <!-- -->
-<link href="/static/css/article.css" rel="stylesheet"/>
-<title>Hello World - Johnathan Irvin</title>
-  </head>
-  <body>
-<div class="container">
-  <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom"><a href="/" class="flex text-muted text-decoration-none"><span class="fs-4">Johnathan Irvin</span></a>
-    <div class="flex"><a href="/faq" class="text-decoration-none text-muted p-2"><span>faq</span></a><a href="/images" class="text-decoration-none text-muted p-2"><span>images</span></a>
-    </div>
+<body>
+ <div class="container">
+  <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+   <a class="flex text-muted text-decoration-none" href="/">
+    <span class="fs-4">
+     Johnathan Irvin
+    </span>
+   </a>
+   <div class="flex">
+    <a class="text-decoration-none text-muted p-2" href="/faq">
+     <span>
+      faq
+     </span>
+    </a>
+    <a class="text-decoration-none text-muted p-2" href="/images">
+     <span>
+      images
+     </span>
+    </a>
+   </div>
   </header>
-</div>
-<main id="main" class="container">
-<h1 class="post-title h1">Hello World</h1>
-<p class="post-date">10 October 2020</p>
-<article><p>For many programmers, the first program they write in any given language is the "Hello World" program first found in <em><a href="https://www.bell-labs.com/usr/dmr/www/bintro.html">A Tutorial Introduction to the Language B by Bell Laboratories</a></em>. It seemed apt to label this article accordingly and incorporate "Hello World" into the content. As an homage to the history of programming, let's write this simple program.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>We will need a text editor. A text editor is a program that allows you to edit just the letters of a file without adding any additional information. This is not to be confused with Microsoft Word or a similar tool known as a Word Processor. We will ignore Word Processors and focus on text editors. You may use any simple text editor program; examples include <a href="https://en.wikipedia.org/wiki/Microsoft_Notepad">Microsoft Notepad</a>, <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.vim.org/">Vim</a>, and <a href="https://www.nano-editor.org/">GNU Nano</a>. I will use Vim. Installing and using your preferred text editor will not be explained in this article.</p>
-<p>This example will be using the programming language <a href="https://www.python.org/">Python</a>. It is not required to know Python or have any prior programming experience to understand and create our first program. Writing your first program requires that you have your environment set up to run Python. To do so, follow the <a href="https://wiki.python.org/moin/BeginnersGuide/Download">Beginners Guide</a> on the Python wiki or follow the <a href="https://realpython.com/installing-python/">Python3 Installation and Setup Guide by Real Python</a>. I recommend the latter.</p>
-<h2 id="first-program">First Program</h2>
-<p>Writing and executing a simple "Hello World" program is fairly simple. Most languages require you to tell the computer using a specific command that you would like to output some characters, in this case, "Hello World," to the screen. The <code>print</code> command allows us to output some text to the screen. Please note that we don't always output the screen (the terminal), and in the past, we've output to a physical printer or similar device. Using your preferred text editor, write the following in a new file named <code>hello_world.py</code>:</p>
-<pre><code class="language-python">print('Hello World!')
+ </div>
+ <main class="container" id="main">
+  <h1 class="post-title h1">
+   Hello World
+  </h1>
+  <p class="post-date">
+   10 October 2020
+  </p>
+  <article>
+   <p>
+    For many programmers, the first program they write in any given language is the "Hello World" program first found in
+    <em>
+     <a href="https://www.bell-labs.com/usr/dmr/www/bintro.html">
+      A Tutorial Introduction to the Language B by Bell Laboratories
+     </a>
+    </em>
+    . It seemed apt to label this article accordingly and incorporate "Hello World" into the content. As an homage to the history of programming, let's write this simple program.
+   </p>
+   <h2 id="prerequisites">
+    Prerequisites
+   </h2>
+   <p>
+    We will need a text editor. A text editor is a program that allows you to edit just the letters of a file without adding any additional information. This is not to be confused with Microsoft Word or a similar tool known as a Word Processor. We will ignore Word Processors and focus on text editors. You may use any simple text editor program; examples include
+    <a href="https://en.wikipedia.org/wiki/Microsoft_Notepad">
+     Microsoft Notepad
+    </a>
+    ,
+    <a href="https://notepad-plus-plus.org/">
+     Notepad++
+    </a>
+    ,
+    <a href="https://www.vim.org/">
+     Vim
+    </a>
+    , and
+    <a href="https://www.nano-editor.org/">
+     GNU Nano
+    </a>
+    . I will use Vim. Installing and using your preferred text editor will not be explained in this article.
+   </p>
+   <p>
+    This example will be using the programming language
+    <a href="https://www.python.org/">
+     Python
+    </a>
+    . It is not required to know Python or have any prior programming experience to understand and create our first program. Writing your first program requires that you have your environment set up to run Python. To do so, follow the
+    <a href="https://wiki.python.org/moin/BeginnersGuide/Download">
+     Beginners Guide
+    </a>
+    on the Python wiki or follow the
+    <a href="https://realpython.com/installing-python/">
+     Python3 Installation and Setup Guide by Real Python
+    </a>
+    . I recommend the latter.
+   </p>
+   <h2 id="first-program">
+    First Program
+   </h2>
+   <p>
+    Writing and executing a simple "Hello World" program is fairly simple. Most languages require you to tell the computer using a specific command that you would like to output some characters, in this case, "Hello World," to the screen. The
+    <code>
+     print
+    </code>
+    command allows us to output some text to the screen. Please note that we don't always output the screen (the terminal), and in the past, we've output to a physical printer or similar device. Using your preferred text editor, write the following in a new file named
+    <code>
+     hello_world.py
+    </code>
+    :
+   </p>
+   <pre><code class="language-python">print('Hello World!')
 </code></pre>
-<p>Save your work, and close the text editor. Open up a terminal application like Powershell on Windows or bash on Ubuntu. If you're on Windows, it is as easy as hitting your Windows Key and searching for <code>Powershell</code> in your search. On Ubuntu, you can press your corresponding key to open up the search and look for <code>Terminal</code>. One the application appears, click it to start the terminal application. One the terminal has started, type <code>python hello_world.py</code> and press enter. If all has gone well, you should see <code>Hello World!</code> appear in your terminal.</p>
-<p>The following image will illustrate by using Vim, the text editor I mentioned before, to create a new file, save it, and then run our program using Python:</p>
-<p><img alt="Animated image displaying &quot;hello world&quot;" src="./images/hello_world.svg" /></p>
-<h2 id="conclusion">Conclusion</h2>
-<p>We've barely scratched the surface of programming. Ask yourself a few of the following questions: What exactly is <code>print</code>? Can I change <code>Hello World!</code> to any text I'd like? Try changing <code>Hello World!</code> to <code>Hello Johnny!</code> and rerunning the program. What happened? Is there a way that I could have a different output  time I run the program? While the <code>Hello World!</code> program ensures that our environment is set up correctly; it doesn't do much.</p>
-<p>What's next? I recommend researching variables in Python.</p></article>
-</main>
-<div class="container">
+   <p>
+    Save your work, and close the text editor. Open up a terminal application like Powershell on Windows or bash on Ubuntu. If you're on Windows, it is as easy as hitting your Windows Key and searching for
+    <code>
+     Powershell
+    </code>
+    in your search. On Ubuntu, you can press your corresponding key to open up the search and look for
+    <code>
+     Terminal
+    </code>
+    . One the application appears, click it to start the terminal application. One the terminal has started, type
+    <code>
+     python hello_world.py
+    </code>
+    and press enter. If all has gone well, you should see
+    <code>
+     Hello World!
+    </code>
+    appear in your terminal.
+   </p>
+   <p>
+    The following image will illustrate by using Vim, the text editor I mentioned before, to create a new file, save it, and then run our program using Python:
+   </p>
+   <p>
+    <img alt='Animated image displaying "hello world"' src="./images/hello_world.svg"/>
+   </p>
+   <h2 id="conclusion">
+    Conclusion
+   </h2>
+   <p>
+    We've barely scratched the surface of programming. Ask yourself a few of the following questions: What exactly is
+    <code>
+     print
+    </code>
+    ? Can I change
+    <code>
+     Hello World!
+    </code>
+    to any text I'd like? Try changing
+    <code>
+     Hello World!
+    </code>
+    to
+    <code>
+     Hello Johnny!
+    </code>
+    and rerunning the program. What happened? Is there a way that I could have a different output  time I run the program? While the
+    <code>
+     Hello World!
+    </code>
+    program ensures that our environment is set up correctly; it doesn't do much.
+   </p>
+   <p>
+    What's next? I recommend researching variables in Python.
+   </p>
+  </article>
+ </main>
+ <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md 4 mb-0 text-muted">© 2020 - 2022 Johnathan Irvin</p>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a href="mailto:irvinjohnathan@gmail.com" target="_blank" class="text-muted"><img src="/static/img/envelope.svg" alt="Email"/></a>
-      </li>
-      <li class="ms-3"><a href="https://github.com/JohnnyIrvin" target="_blank" class="text-muted"><img src="/static/img/github.svg" alt="Github"/></a>
-      </li>
-      <li class="ms-3"><a href="https://twitter.com/_JohnnyIrvin" target="_blank" class="text-muted"><img src="/static/img/twitter.svg" alt="Twitter"/></a>
-      </li>
-      <li class="ms-3"><a href="https://www.instagram.com/j0hnnyirvin/" target="_blank" class="text-muted"><img src="/static/img/instagram.svg" alt="Instagram"/></a>
-      </li>
-      <li class="ms-3"><a href="https://www.linkedin.com/in/johnnyirvin/" target="_blank" class="text-muted"><img src="/static/img/linkedin.svg" alt="LinkedIn"/></a>
-      </li>
-    </ul>
-    <ul class="nav list-unstyled d-flex col-md-12 justify-content-start d-flex">
-      <li class="ms-3"><a href="/rss.xml" class="text-muted">rss feed</a>
-      </li>
-      <li class="ms-3"><span>| </span>
-      </li>
-      <li class="ms-3"><a href="/sitemap.xml" class="text-muted">sitemap</a>
-      </li>
-    </ul>
+   <p class="col-md 4 mb-0 text-muted">
+    © 2020 - 2022 Johnathan Irvin
+   </p>
+   <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3">
+     <a class="text-muted" href="mailto:irvinjohnathan@gmail.com" target="_blank">
+      <img alt="Email" src="/static/img/envelope.svg"/>
+     </a>
+    </li>
+    <li class="ms-3">
+     <a class="text-muted" href="https://github.com/JohnnyIrvin" target="_blank">
+      <img alt="Github" src="/static/img/github.svg"/>
+     </a>
+    </li>
+    <li class="ms-3">
+     <a class="text-muted" href="https://twitter.com/_JohnnyIrvin" target="_blank">
+      <img alt="Twitter" src="/static/img/twitter.svg"/>
+     </a>
+    </li>
+    <li class="ms-3">
+     <a class="text-muted" href="https://www.instagram.com/j0hnnyirvin/" target="_blank">
+      <img alt="Instagram" src="/static/img/instagram.svg"/>
+     </a>
+    </li>
+    <li class="ms-3">
+     <a class="text-muted" href="https://www.linkedin.com/in/johnnyirvin/" target="_blank">
+      <img alt="LinkedIn" src="/static/img/linkedin.svg"/>
+     </a>
+    </li>
+   </ul>
+   <ul class="nav list-unstyled d-flex col-md-12 justify-content-start d-flex">
+    <li class="ms-3">
+     <a class="text-muted" href="/rss.xml">
+      rss feed
+     </a>
+    </li>
+    <li class="ms-3">
+     <span>
+      |
+     </span>
+    </li>
+    <li class="ms-3">
+     <a class="text-muted" href="/sitemap.xml">
+      sitemap
+     </a>
+    </li>
+   </ul>
   </footer>
-</div>
-  </body>
-</html>
+ </div>
+</body>
