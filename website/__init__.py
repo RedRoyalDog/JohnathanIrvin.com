@@ -163,6 +163,9 @@ def sitemap() -> str:
     response.mimetype = 'application/xml'
     return response
 
+
+with open('website/static/faq.md', 'r') as file:
+    QUESTION_MARKDOWN = file.read()
 @app.route('/faq')
 def faq() -> str:
     """
@@ -171,11 +174,12 @@ def faq() -> str:
     Returns:
         str: The rendered template.
     """
-    questions: dict = {
-    }
     return flask.render_template(
         'faq.pug',
-        questions=questions
+        content=markdown.markdown(
+            QUESTION_MARKDOWN,
+            extensions=['fenced_code', 'toc', 'tables'],
+        )
     )
 
 @app.errorhandler(404)
