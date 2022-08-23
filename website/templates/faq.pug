@@ -1,0 +1,18 @@
+extends layout.pug
+
+block title
+    title FAQ - Johnathan Irvin
+
+block content
+    h1 Frequently Asked Questions
+
+    .toc: ul
+        // {% for question in questions.keys() %}
+        li: a(href="{{ '#'+question|escape }}") {{ question }}
+        // {% endfor %}
+
+    // {% for question, answer in questions.items() %}
+    h2 {{ question }}
+    p {{ answer }}
+    // {% endfor %}
+

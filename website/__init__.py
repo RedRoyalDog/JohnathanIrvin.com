@@ -133,6 +133,21 @@ def sitemap() -> str:
     response.mimetype = 'application/xml'
     return response
 
+@app.route('/faq')
+def faq() -> str:
+    """
+    Returns the FAQ page.
+
+    Returns:
+        str: The rendered template.
+    """
+    questions: dict = {
+    }
+    return flask.render_template(
+        'faq.pug',
+        questions=questions
+    )
+
 @app.errorhandler(404)
 def not_found(error: Exception) -> str:
     return flask.render_template('404.pug'), 404
