@@ -28,7 +28,10 @@ def test_document_found(client) -> None:
     Args:
         client (test_client): The test client for the Flask application.
     """    
-    assert client.get("/").status_code == 200
+    assert client.get(
+        "/",
+        follow_redirects=True,    
+    ).status_code == 200
 
 def test_document_not_found(client) -> None:
     """
@@ -37,7 +40,10 @@ def test_document_not_found(client) -> None:
     Args:
         client (test_client): The test client for the Flask application.
     """    
-    assert client.get("/notfound").status_code == 404
+    assert client.get(
+        "/notfound",
+        follow_redirects=True,
+    ).status_code == 404
 
 @pytest.mark.parametrize("name, content", [
     ("viewport", "width=device-width, initial-scale=1"),
@@ -54,4 +60,9 @@ def test_document_meta_element(name: str, content: str, client) -> None:
         content (str): The content of the meta element.
         client (test_client): The test client for the Flask application.
     """
-    assert client.get('/').data.decode().find(f"<meta name=\"{name}\" content=\"{content}\">") > 0
+    assert client.get(
+        '/',
+        follow_redirects=True,
+    ).data.decode().find(
+        f"<meta name=\"{name}\" content=\"{content}\">"
+    ) > 0

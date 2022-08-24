@@ -23,11 +23,23 @@ import random
 
 import flask
 import markdown
+from flask_talisman import Talisman
 
 from website.repositories import Repository, blog_repositories
 
 app = flask.Flask(__name__)
+
+csp = {
+    'default-src': [
+        '\'self\'',
+        'cdn.jsdelivr.net',
+    ]
+
+}
+Talisman(app, content_security_policy=csp)
+
 app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
+
 blog_repo = blog_repositories.PostRepository('blog')
 
 @app.route('/')

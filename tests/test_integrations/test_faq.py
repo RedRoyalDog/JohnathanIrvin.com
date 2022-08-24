@@ -28,7 +28,10 @@ def test_faq(client):
     Args:
         client (test_client): The test client.
     """
-    response = client.get('/faq')
+    response = client.get(
+        '/faq',
+        follow_redirects=True,
+    )
 
     assert response.status_code == 200
     assert 'Frequently Asked Questions' in response.text
@@ -51,6 +54,9 @@ def test_faq_questions(client, question: str):
         client (test_client): The test client.
         question (str): The question to test.
     """
-    response = client.get('/faq')
+    response = client.get(
+        '/faq',
+        follow_redirects=True,
+    )
 
     assert question in response.text
