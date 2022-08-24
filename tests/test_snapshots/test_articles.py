@@ -35,7 +35,10 @@ def test_article_found(article_slug: str, client) -> None:
         article_slug (str): The slug of the article to find.
         client (website.app.test_client): The test client for the Flask application.
     """    
-    assert client.get(f"/{article_slug}").status_code == 200
+    assert client.get(
+        f"/{article_slug}",
+        follow_redirects=True,
+    ).status_code == 200
 
 @pytest.mark.parametrize("article_slug", ARTICLE_SLUGS)
 def test_article_snapshots(article_slug: str, client, snapshot) -> None:
@@ -48,7 +51,10 @@ def test_article_snapshots(article_slug: str, client, snapshot) -> None:
         snapshot (pytest_snapshot.plugin.Snapshot): The snapshot plugin.
     """    
     snapshot.snapshot_dir = "tests/snapshots"
-    html = client.get(f"/{article_slug}").text
+    html = client.get(
+        f"/{article_slug}",
+        follow_redirects=True,
+    ).text
     soup = bs4.BeautifulSoup(html, "html.parser")
 
     snapshot.assert_match(
