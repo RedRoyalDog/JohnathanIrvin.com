@@ -109,15 +109,21 @@ def image_thumbnail(name: str) -> str:
     Returns:
         str: The rendered template.
     """
+
     image = image_repo.get(name)
 
     if image is None:
         flask.abort(404)
 
     mimetype = 'image/jpeg' if image.extension == 'jpg' else 'image/png'
+    format = 'JPEG' if image.extension == 'jpg' else 'PNG'
+
+    img_io = io.BytesIO()
+    image.thumbnail(200).save(img_io, format, quality=70)
+    img_io.seek(0)
 
     return flask.send_file(
-        io.BytesIO(image.thumbnail(200).tobytes()),
+        img_io,
         mimetype=mimetype,
     )
 
