@@ -34,7 +34,7 @@ app = flask.Flask(__name__)
 csp = {
     'default-src': [
         '\'self\'',
-        'unsafe-inline',
+        '\'unsafe-inline\'',
         'cdn.jsdelivr.net',
         'googletagmanager.com',
         'www.googletagmanager.com',
