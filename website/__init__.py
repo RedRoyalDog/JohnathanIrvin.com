@@ -36,6 +36,7 @@ csp = {
         '\'self\'',
         'cdn.jsdelivr.net',
         'googletagmanager.com',
+        'www.googletagmanager.com',
     ]
 }
 Talisman(app, content_security_policy=csp)
