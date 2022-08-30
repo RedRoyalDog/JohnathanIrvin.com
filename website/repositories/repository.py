@@ -24,15 +24,6 @@ from website.models.entity import Entity
 
 
 class Repository(Protocol):
-    class NotFound(Exception):
-        """
-        Raised when an entity is not found.
-        """
-    class AlreadyExists(Exception):
-        """
-        Raised when an entity already exists.
-        """
-
     def create(self, model: Entity) -> Entity:
         """
         Creates a new entity.
@@ -79,5 +70,14 @@ class Repository(Protocol):
 
         Returns:
             Entity: The entity.
+        """        
+        pass
+
+    def get_all(self) -> list:
+        """
+        Gets all existing entities.
+
+        Returns:
+            list: The entities.
         """        
         pass
