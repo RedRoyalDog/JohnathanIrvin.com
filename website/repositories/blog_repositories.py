@@ -21,9 +21,8 @@
 import os
 
 import frontmatter
+import website.repositories.errors as errors
 from website.models.blog import Post
-
-from .repository import Repository
 
 
 class PostRepository:
@@ -101,7 +100,7 @@ class PostRepository:
         }
         path = self._get_path(model)
         if os.path.exists(path):
-            raise Repository.AlreadyExists()
+            raise errors.EntityAlreadyExists()
 
         with open(path, 'w') as f:
             f.write(frontmatter.dumps(header))
@@ -122,7 +121,7 @@ class PostRepository:
         """
         model = self._posts.get(identifier, None)
         if model is None:
-            raise Repository.NotFound()
+            raise errors.EntityNotFound()
         
         header = {
             key: value
@@ -163,7 +162,7 @@ class PostRepository:
         """
         post = self._posts.get(identifier, None)
         if post is None:
-            raise Repository.NotFound()
+            raise errors.EntityNotFound()
 
         return post
 
