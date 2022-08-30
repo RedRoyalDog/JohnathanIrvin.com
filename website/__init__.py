@@ -18,6 +18,7 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import io
 import os
 import random
 
@@ -25,7 +26,8 @@ import flask
 import markdown
 from flask_talisman import Talisman
 
-from website.repositories import Repository, blog_repositories
+from website.repositories import (Repository, blog_repositories,
+                                  image_repositories)
 
 app = flask.Flask(__name__)
 
@@ -41,6 +43,7 @@ Talisman(app, content_security_policy=csp)
 app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
 
 blog_repo = blog_repositories.PostRepository('blog')
+image_repo = image_repositories.ImageRepository('images')
 
 @app.route('/')
 def index() -> str:
@@ -67,15 +70,9 @@ def images() -> str:
     Returns:
         str: The rendered template.
     """    
-    images = []
-    directory = os.path.join('website', 'images')
-
-    for image in os.listdir(directory):
-        images.append(image.replace(' ', '_'))
-    
     return flask.render_template(
         'images.pug',
-        images=images
+        images=image_repo.get_all()
     )
 
 @app.route('/images/<string:name>')
@@ -88,10 +85,40 @@ def image(name: str) -> str:
     
     Returns:
         str: The rendered template.
-    """ 
-    return flask.send_from_directory(
-        "images",
-        name.lower().replace('_', ' ')
+    """
+    image = image_repo.get(name)
+
+    if image is None:
+        flask.abort(404)
+
+    mimetype = 'image/jpeg' if image.extension == 'jpg' else 'image/png'
+
+    return flask.Response(
+        image.content,
+        mimetype=mimetype,
+    )
+
+@app.route('/images/<string:name>/thumbnail')
+def image_thumbnail(name: str) -> str:
+    """
+    Returns the image with the given name.
+
+    Args:
+        name: The name of the image.
+    
+    Returns:
+        str: The rendered template.
+    """
+    image = image_repo.get(name)
+
+    if image is None:
+        flask.abort(404)
+
+    mimetype = 'image/jpeg' if image.extension == 'jpg' else 'image/png'
+
+    return flask.send_file(
+        io.BytesIO(image.thumbnail(200).tobytes()),
+        mimetype=mimetype,
     )
 
 @app.route('/articles/<int:year>/<int:month>/<int:day>/<string:description>')

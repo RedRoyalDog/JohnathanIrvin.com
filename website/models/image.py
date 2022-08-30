@@ -20,6 +20,8 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 from dataclasses import dataclass
 
+import PIL.Image
+import io
 
 @dataclass
 class Image:
@@ -29,6 +31,20 @@ class Image:
     @property
     def extension(self) -> str:
         return self.title.split('.')[-1]
+
+    def thumbnail(self, size: int) -> PIL.Image.Image:
+        """
+        Returns a thumbnail of the image.
+
+        Args:
+            size (int): The size of the thumbnail.
+
+        Returns:
+            PIL.Image.Image: The thumbnail of the image.
+        """
+        image = PIL.Image.open(io.BytesIO(self.content))
+        image.thumbnail((size, size))
+        return image
 
     def get_identifier(self) -> str:
         """
