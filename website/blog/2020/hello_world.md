@@ -24,7 +24,7 @@ Save your work, and close the text editor. Open up a terminal application like P
 
 The following image will illustrate by using Vim, the text editor I mentioned before, to create a new file, save it, and then run our program using Python:
 
-![Animated image displaying "hello world"](./images/hello_world.svg)
+![Animated image displaying "hello world"](/static/img/hello_world.svg)
 
 ## Conclusion
 
