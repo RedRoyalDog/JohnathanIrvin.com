@@ -34,7 +34,7 @@ class Repository(Protocol):
         Returns:
             Entity: The created entity.
         """        
-        pass
+        ...
 
     def update(self, identifier: str | int, model: Entity) -> Entity:
         """
@@ -47,7 +47,7 @@ class Repository(Protocol):
         Returns:
             Entity: The updated entity.
         """        
-        pass
+        ...
 
     def delete(self, identifier: str | int) -> Entity:
         """
@@ -59,7 +59,7 @@ class Repository(Protocol):
         Returns:
             Entity: The deleted entity.
         """        
-        pass
+        ...
 
     def get(self, identifier: str | int) -> Entity:
         """
@@ -71,7 +71,7 @@ class Repository(Protocol):
         Returns:
             Entity: The entity.
         """        
-        pass
+        ...
 
     def get_all(self) -> list:
         """
@@ -80,4 +80,4 @@ class Repository(Protocol):
         Returns:
             list: The entities.
         """        
-        pass
+        ...
