@@ -18,6 +18,7 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import datetime
 import os
 
 import website.repositories.errors as errors
@@ -59,8 +60,10 @@ class ImageRepository:
                 
                 with open(os.path.join(directory, file), 'rb') as f:
                     content = f.read()
+                    created = os.path.getctime(os.path.join(directory, file))
                     image = Image(
                         title=file,
+                        created=datetime.datetime.fromtimestamp(created),
                         content=content,
                     )
                     posts[image.get_identifier()] = image

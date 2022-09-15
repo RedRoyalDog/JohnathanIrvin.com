@@ -76,7 +76,10 @@ def images() -> str:
     """    
     return flask.render_template(
         'images.pug',
-        images=image_repo.get_all()
+        images=sorted(
+            image_repo.get_all(),
+            key=lambda image: image.created
+        )
     )
 
 @app.route('/images/<string:name>')

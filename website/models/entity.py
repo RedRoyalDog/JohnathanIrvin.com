@@ -29,4 +29,4 @@ class Entity(Protocol):
         Returns:
             str | int: The identifier of the entity.
         """        
-        pass
+        ...
