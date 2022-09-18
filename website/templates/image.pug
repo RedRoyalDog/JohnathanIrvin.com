@@ -1,0 +1,8 @@
+extends document.pug
+
+block title
+    title {{ image.title }} - Johnathan Irvin
+
+block body
+    .container-fluid.text-center
+        img.img-fluid(src="{{ image.data_uri }}")
