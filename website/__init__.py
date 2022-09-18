@@ -40,7 +40,11 @@ csp = {
         'www.googletagmanager.com',
         'google-analytics.com',
         'www.google-analytics.com',
-    ]
+    ],
+    'img-src': [
+        '\'self\'',
+        'data:',
+    ],
 }
 Talisman(app, content_security_policy=csp)
 
@@ -98,11 +102,9 @@ def image(name: str) -> str:
     if image is None:
         flask.abort(404)
 
-    mimetype = 'image/jpeg' if image.extension == 'jpg' else 'image/png'
-
-    return flask.Response(
-        image.content,
-        mimetype=mimetype,
+    return flask.render_template(
+        'image.pug',
+        image=image
     )
 
 @app.route('/images/<string:name>/thumbnail')

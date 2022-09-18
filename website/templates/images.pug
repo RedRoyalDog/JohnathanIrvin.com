@@ -6,9 +6,11 @@ block title
 block content
     .d-flex.justify-content-center.flex-wrap
         // {% for image in images %}
-        img.flex(
-            src='/images/{{ image.title }}/thumbnail',
-            width='200px',
-            height='200px'
-        )
+        a(href="{{ url_for('image', name=image.title) }}", target="_blank")
+            img.img-fluid.img-thumbnail.m-1(
+                src='/images/{{ image.title }}/thumbnail',
+                alt='{{ image.title }}',
+                width='200px',
+                height='200px'
+            )
         // {% endfor %}

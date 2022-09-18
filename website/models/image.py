@@ -18,6 +18,7 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+import base64
 import datetime
 import io
 from dataclasses import dataclass
@@ -30,6 +31,16 @@ class Image:
     title: str
     created: datetime.datetime
     content: bytes
+
+    @property
+    def data_uri(self) -> str:
+        """
+        Returns the data URI of the image.
+
+        Returns:
+            str: The data URI of the image.
+        """
+        return f"data:image/png;base64,{base64.b64encode(self.content).decode('utf-8')}"
 
     @property
     def extension(self) -> str:
