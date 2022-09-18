@@ -55,9 +55,6 @@ class ImageRepository:
         directory = os.path.join('website', directory)
         for _, _, files in os.walk(directory):
             for file in files:
-                if not file.endswith('.jpg') and not file.endswith('.png'):
-                    continue
-                
                 with open(os.path.join(directory, file), 'rb') as f:
                     content = f.read()
                     created = os.path.getctime(os.path.join(directory, file))

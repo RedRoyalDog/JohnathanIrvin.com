@@ -1,7 +1,30 @@
 <urlset>
-    {% for item in items %}
-        <url>
-            <loc>{{ 'articles/' + item.get_identifier() }}</loc>
-        </url>
+    <url>
+        <loc>index</loc>
+    </url>
+    <url>
+        <loc>faq</loc>
+    </url>
+    {% for item in articles %}
+    <url>
+        <loc>{{ 'articles/' + item.get_identifier() }}</loc>
+    </url>
     {% endfor %}
+    {% for item in images %}
+    <url>
+        <loc>{{ 'images/' + item.get_identifier() }}</loc>
+    </url>
+    <url>
+        <loc>{{ 'images/' + item.get_identifier() + '/thumbnail'}}</loc>
+    </url>
+    {% endfor %}
+    <url>
+        <loc>favicon</loc>
+    </url>
+    <url>
+        <loc>rss</loc>
+    </url>
+    <url>
+        <loc>sitemap</loc>
+    </url>
 </urlset>

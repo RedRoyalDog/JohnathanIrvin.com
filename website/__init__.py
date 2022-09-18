@@ -26,8 +26,7 @@ import flask
 import markdown
 from flask_talisman import Talisman
 
-from website.repositories import (Repository, blog_repositories,
-                                  image_repositories)
+from website.repositories import blog_repositories, image_repositories
 
 app = flask.Flask(__name__)
 
@@ -52,6 +51,7 @@ app.jinja_env.add_extension('pypugjs.ext.jinja.PyPugJSExtension')
 
 blog_repo = blog_repositories.PostRepository('blog')
 image_repo = image_repositories.ImageRepository('images')
+icon_repo = image_repositories.ImageRepository('static/icons')
 
 @app.route('/')
 def index() -> str:
@@ -152,13 +152,12 @@ def article(year: int, month: int, day: int, description: str) -> str:
     """    
     try:
         post = blog_repo.get(f"{year}/{month}/{day}/{description}")
-    except Repository.NotFound:
+    except Exception:
         flask.abort(404)
 
     return flask.render_template(
         'article.pug',
         title=post.title,
-        # Day Month Year
         date=post.date.strftime('%d %B %Y'),
         content=markdown.markdown(
             post.content,
@@ -204,18 +203,25 @@ def sitemap() -> str:
     Returns:
         str: The rendered template.
     """    
-    sorted_items = sorted(
+    sorted_articles = sorted(
         blog_repo.get_all(),
         key=lambda post: post.date,
+        reverse=True,
+    )
+    sorted_images = sorted(
+        image_repo.get_all(),
+        key=lambda image: image.created,
         reverse=True,
     )
     response = flask.make_response(
         flask.render_template(
             'sitemap.xml',
-            items=sorted_items,
+            articles=sorted_articles,
+            images=sorted_images,
         )
     )
     response.mimetype = 'application/xml'
+
     return response
 
 
@@ -228,17 +234,17 @@ def favicon() -> flask.Response:
     Returns:
         flask.Response: The image response.
     """
-    directory = os.path.join(
-        app.root_path,
-        'static',
-        'icons',
-    )
-    images = os.listdir(directory)
+    images = icon_repo.get_all()
     image = random.choice(images)
 
-    return flask.send_from_directory(
-        directory,
-        image,
+    mimetype = 'image/jpeg' if image.extension == 'jpg' else 'image/png'
+    mimetype = 'favicon' if image.extension == 'ico' else mimetype
+    img_io = io.BytesIO(image.content)
+    img_io.seek(0)
+
+    return flask.send_file(
+        img_io,
+        mimetype=mimetype,
     )
 
 with open('website/static/faq.md', 'r') as file:
