@@ -20,15 +20,14 @@ Blocks, such as the title, can be overridden in the layout. The `block` tag acce
 
 The default looks like this:
 
-```pugjs
+```{.pugjs .codehilite linenums="1"}
 block title
     title Engineer, Researcher, Entrepreneur - Johnathan Irvin
 ```
 
 The layout contains the default title. I overrode the block in the `article.pug` file.
 
-```
-pugjs
+```{.pugjs .codehilite linenums="1"}
 block title
     title {{ title }} - Johnathan Irvin
 ```

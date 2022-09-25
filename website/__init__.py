@@ -161,7 +161,7 @@ def article(year: int, month: int, day: int, description: str) -> str:
         date=post.date.strftime('%d %B %Y'),
         content=markdown.markdown(
             post.content,
-            extensions=['fenced_code', 'toc', 'tables'],
+            extensions=['pymdownx.superfences', 'toc', 'tables', 'codehilite'],
         )
     )
 

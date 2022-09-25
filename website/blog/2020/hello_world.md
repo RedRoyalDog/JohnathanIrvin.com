@@ -16,7 +16,7 @@ This example will be using the programming language [Python](https://www.python.
 
 Writing and executing a simple "Hello World" program is fairly simple. Most languages require you to tell the computer using a specific command that you would like to output some characters, in this case, "Hello World," to the screen. The ```print``` command allows us to output some text to the screen. Please note that we don't always output the screen (the terminal), and in the past, we've output to a physical printer or similar device. Using your preferred text editor, write the following in a new file named ```hello_world.py```:
 
-```python
+```{.python .codehilite linenums="1"}
 print('Hello World!')
 ```
 
