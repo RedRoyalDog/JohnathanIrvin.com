@@ -18,6 +18,8 @@ Pillow==9.2.0
 pluggy==1.0.0
 py==1.11.0
 pycparser==2.21
+Pygments==2.13.0
+pymdown-extensions==9.5
 pyparsing==3.0.9
 pypugjs==5.9.11
 pytest==7.1.2
