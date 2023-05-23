@@ -18,9 +18,16 @@ def copy_and_apply_func(src_dir: str, dst_dir: str, func: Callable[[str], None])
 
             if file == "layout.html":
                 continue
-            
+
             src_path = os.path.join(root, file)
-            dst_path = os.path.join(dst_dir, file)
+
+            dst_path = (
+                os.path
+                    .join(dst_dir, root, file)
+                    .replace(src_dir, "")
+                    .removeprefix(os.sep)
+            )
+
             os.makedirs(os.path.dirname(dst_path), exist_ok=True)
             shutil.copy2(src_path, dst_path)
             func(dst_path)
