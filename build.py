@@ -12,7 +12,7 @@ def copy_and_apply_func(src_dir: str, dst_dir: str, func: Callable[[str], None])
         src_dir (str): The source directory.
         dst_dir (str): The destination directory.
         func (Callable[[str], None]): The function to apply to each file.
-    """    
+    """
     for root, _, files in os.walk(src_dir):
         for file in files:
 
@@ -116,7 +116,6 @@ def minimize(html: str) -> str:
         str: The minimized HTML.
     """
     return html.replace("\n", "").replace("\t", "").replace("  ", "")
-
 
 def main() -> None:
     """
