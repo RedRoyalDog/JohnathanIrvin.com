@@ -15,6 +15,10 @@ def copy_and_apply_func(src_dir: str, dst_dir: str, func: Callable[[str], None])
     """    
     for root, _, files in os.walk(src_dir):
         for file in files:
+
+            if file == "layout.html":
+                continue
+            
             src_path = os.path.join(root, file)
             dst_path = os.path.join(dst_dir, file)
             os.makedirs(os.path.dirname(dst_path), exist_ok=True)
