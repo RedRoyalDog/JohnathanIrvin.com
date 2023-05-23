@@ -15,8 +15,19 @@ def copy_and_apply_func(src_dir: str, dst_dir: str, func: Callable[[str], None])
     """    
     for root, _, files in os.walk(src_dir):
         for file in files:
+
+            if file == "layout.html":
+                continue
+
             src_path = os.path.join(root, file)
-            dst_path = os.path.join(dst_dir, file)
+
+            dst_path = (
+                os.path
+                    .join(dst_dir, root, file)
+                    .replace(src_dir, "")
+                    .removeprefix(os.sep)
+            )
+
             os.makedirs(os.path.dirname(dst_path), exist_ok=True)
             shutil.copy2(src_path, dst_path)
             func(dst_path)
@@ -67,6 +78,17 @@ def delete_directory(path: str) -> None:
     if os.path.exists(path):
         shutil.rmtree(path)
 
+def write_file(path: str, content: str) -> None:
+    """
+    Write the content to the file.
+
+    Args:
+        path (str): The path to the file.
+        content (str): The content to write to the file.
+    """
+    with open(path, "w") as f:
+        f.write(content)
+
 def inject(template: str, content: str, tag="{% body %}") -> str:
     """
     Inject the content into the template. The content will be injected into
@@ -108,12 +130,15 @@ def main() -> None:
     copy_and_apply_func(
         src_dir="src",
         dst_dir="dist",
-        func=lambda path: minimize(
-            inject(
-                layout,
-                read_file(path),
-                tag="{% body %}"
-            )
+        func=lambda path: write_file(
+            path=path,
+            content=minimize(
+                inject(
+                    layout,
+                    read_file(path),
+                    tag="{% body %}"
+                )
+            ) if path.endswith(".html") else read_file(path)
         )
     )
 
