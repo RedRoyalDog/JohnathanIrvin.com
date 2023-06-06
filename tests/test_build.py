@@ -22,7 +22,7 @@ from unittest.mock import call, mock_open, patch
 
 import pytest
 
-from build import copy_file, read_file
+from build import copy_file, delete_directory, read_file
 
 
 def test_read_file():
@@ -47,3 +47,22 @@ def test_copy_file():
             ],
             any_order=True
         )
+
+@pytest.mark.parametrize(
+    "path, exists",
+    [
+        ("path", True),
+        ("path", False),
+    ]
+)
+def test_delete_directory(path, exists):
+    with patch("build.os.path.exists", return_value=exists) as mock_exists:
+        with patch("build.shutil.rmtree") as mock_rmtree:
+            delete_directory(path)
+
+            mock_exists.assert_called_once_with("path")
+
+            if exists:
+                mock_rmtree.assert_called_once_with("path")
+            else:
+                mock_rmtree.assert_not_called()
