@@ -22,7 +22,7 @@ from unittest.mock import call, mock_open, patch
 
 import pytest
 
-from build import copy_file, delete_directory, read_file, write_file
+from build import copy_file, delete_directory, minimize, read_file, write_file
 
 
 def test_read_file():
@@ -77,3 +77,20 @@ def test_delete_directory(path, exists):
                 mock_rmtree.assert_called_once_with("path")
             else:
                 mock_rmtree.assert_not_called()
+
+@pytest.mark.parametrize(
+    "unminimized, minimized",
+    [
+        ("data", "data"),
+        ("data\n", "data"),
+        ("data\t", "data"),
+        ("data  ", "data"),
+        ("data\n\t", "data"),
+        ("data\n  ", "data"),
+        ("data\t  ", "data"),
+        ("data\n\t  ", "data"),
+        ("data\n\t  data", "data data"),
+    ]
+)
+def test_minimize(unminimized, minimized):
+    assert minimize(unminimized) == minimized
