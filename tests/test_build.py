@@ -22,7 +22,8 @@ from unittest.mock import call, mock_open, patch
 
 import pytest
 
-from build import copy_file, delete_directory, minimize, read_file, write_file
+from build import (copy_file, delete_directory, inject, minimize, read_file,
+                   write_file)
 
 
 def test_read_file():
@@ -94,3 +95,15 @@ def test_delete_directory(path, exists):
 )
 def test_minimize(unminimized, minimized):
     assert minimize(unminimized) == minimized
+
+
+@pytest.mark.parametrize(
+    "template, content, tag, injected",
+    [
+        ("{% body %}", "content", "{% body %}", "content"),
+        ("{% body %}", "content", "{% nope %}", "{% body %}"),
+        ("Empty Template", "content", "{% body %}", "Empty Template"),
+    ]
+)
+def test_inject(template, content, tag, injected):
+    assert inject(template, content, tag) == injected
