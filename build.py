@@ -106,7 +106,12 @@ def minimize(html: str) -> str:
     Returns:
         str: The minimized HTML.
     """
-    return html.replace("\n", "").replace("\t", "").replace("  ", "")
+    return " ".join(
+        html
+            .replace("\n", "")
+            .replace("\t", "")
+            .split()
+    )
 
 def main() -> None:
     """
