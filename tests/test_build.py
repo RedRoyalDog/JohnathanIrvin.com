@@ -22,7 +22,7 @@ from unittest.mock import call, mock_open, patch
 
 import pytest
 
-from build import copy_file, delete_directory, read_file
+from build import copy_file, delete_directory, read_file, write_file
 
 
 def test_read_file():
@@ -32,6 +32,17 @@ def test_read_file():
     with patch("build.open", mock_open(read_data="data")) as mock_file:
         assert read_file("path") == "data"
         mock_file.assert_called_once_with("path")
+
+def test_write_file():
+    """
+    Test the write_file function.
+    """
+    with patch("build.open", mock_open()) as mock_file:
+        write_file("path", "data")
+
+        mock_file.assert_called_once_with("path", "w")
+        mock_file().write.assert_called_once_with("data")
+
 
 def test_copy_file():
     """
