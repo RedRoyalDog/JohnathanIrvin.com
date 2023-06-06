@@ -32,15 +32,6 @@ def copy_and_apply_func(src_dir: str, dst_dir: str, func: Callable[[str], None])
             shutil.copy2(src_path, dst_path)
             func(dst_path)
 
-def get_layout() -> str:
-    """
-    Get the layout file.
-
-    Returns:
-        str: The path to the layout file.
-    """
-    return os.path.join("src", "layout.html")
-
 def read_file(path: str) -> str:
     """
     Read the contents of a file.
@@ -121,9 +112,7 @@ def main() -> None:
     """
     The main entry point for the script.
     """
-    layout = read_file(
-        get_layout()
-    )
+    layout = read_file(os.path.join("src", "layout.html"))
 
     delete_directory("dist")
     copy_and_apply_func(
